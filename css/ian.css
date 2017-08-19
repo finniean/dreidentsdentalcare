@@ -1,0 +1,46 @@
+html{
+background:url("Dreidents.jpg");
+background-repeat:no-repeat;
+background-size:72%;
+background-position: center;
+}
+form{
+	color:black;
+	font-size:20px;
+	border:1px solid black;
+	margin:5px;
+	width:20%;
+	border-radius:10px;
+	padding:5px;
+	background-color:36c9f5;
+}
+.nav{
+	padding:2px;
+	height:fixed;
+	width:fixed;
+	margin:50px;
+}
+.nav a{
+	border:1px solid red;
+	border-radius:20%;
+	text-decoration:none;
+	background:white;
+	padding:2px;
+	margin:50px;
+	font-size:20px;
+}
+th{
+	color:red;
+}
+table{
+	background:38cbf6;
+}
+table a{
+	text-decoration:none;
+	color:yellow;
+}
+table a:hover {
+	color:red;
+}
+
+	
