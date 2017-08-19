@@ -109,5 +109,5 @@ include "templates/header.php";
 <!-- end page content -->
 
 <?php
-include "templates/footer.php";
+include "/templates/footer.php";
 ?>

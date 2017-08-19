@@ -221,10 +221,13 @@ input.form-control.form-control-login {
 .locationinfo p{
 	margin-bottom: 30px;
 }
-.btn.btn-cstm{
+button.btn.btn-cstm{
 	background-image: linear-gradient(to bottom,#38cbf5 0,#2c97b6 100%);
 	background-repeat: repeat-x;
     border-color: #2c97b6;
+}
+.indention{
+	margin-left:50px;
 }
 .clearfix {
     clear: both;
@@ -237,7 +240,4 @@ input.form-control.form-control-login {
     width: 990px;
     margin-left: auto;
     margin-right: auto;
-}
-.reqfields{
-	font-size: 0.8em;
 }

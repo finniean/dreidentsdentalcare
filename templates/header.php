@@ -80,13 +80,16 @@
                     <a href="404.php">SERVICES</a>
                 </li>
                 <li>
-                    <a href="404.php">PROMOS</a>
+                    <a href="denthis.php">DENT HISTORY</a>
                 </li>
-                <li>
-                    <a href="404.php">NEWS</a>
+				<li>
+                    <a href="medhis.php">MED HISTORY</a>
                 </li>
-                <li>
-                    <a href="appointment.php">APPOINTMENT</a>
+				<li>
+                    <a href="allergy.php">ALLERGIES</a>
+                </li>
+				<li>
+                    <a href="information.php">INFORMATION</a>
                 </li>
             </ul>
         </div>
