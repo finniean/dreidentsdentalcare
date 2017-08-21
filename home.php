@@ -1,12 +1,13 @@
 <?php
 $title = "Dreident Dental Care - Home";
 include "templates/header.php";
+include "templates/navigation.php";
 ?>
 
 <!-- begin page content -->
-<div class="header clearfix">
-	<div class="pagecontent clearfix">
-		<div class="bs-example">
+<div class="pagebody clearfix">
+	<div class="content-container">
+		<div class="home-carousel">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner">
 					<div class="item active">

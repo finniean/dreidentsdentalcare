@@ -1,0 +1,172 @@
+    /* For tablets: */
+/* Body */
+* {
+    box-sizing: border-box;
+}
+body {
+    background: #161a1b;
+    margin: 0px;
+    color: white;
+	overflow-x:hidden;
+}
+p {
+    text-align: justify;
+}
+img{
+	width: 100%;
+}
+.clearfix {
+    clear: both;
+}
+.content-container{
+	width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 0px;
+}
+.pageheader {
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 30px;
+}
+.pageheader h1 {
+    margin: 0 !important;
+}
+.pagecontent {
+    padding-top: 15px;
+}
+.blueline {
+    margin: 0 0 30px;
+}
+.blueline:after {
+    content: "";
+    display: block;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #38cbf5;
+    margin-top: 10px;
+}
+/* Header */
+.header .content-container{
+	padding-bottom: 0;
+}
+.branding{
+	margin-bottom: 40px;
+}
+.btn-login button{
+	margin-bottom: 15px
+}
+.login-links a{
+	float: left;
+	margin-left: 15px;
+	color: white;
+}
+/* Navigation */
+nav {
+	margin-bottom: 0 !important;
+	border: none !important;
+}
+nav .content-container{
+	padding: 0;
+}
+nav .navbar-toggle{
+	float: none;
+	margin: 10px 0;
+}
+nav button{
+	background-image: linear-gradient(to bottom,#38cbf5 0,#2c97b6 100%)!important;
+	background-repeat: repeat-x!important;
+    border-color: #2c97b6!important;
+}
+nav .icon-bar{
+	background: white;
+}
+nav .navbar-collapsed{
+	padding-right: 15px;
+    padding-left: 15px;
+    overflow-x: visible;
+	border-top: 1px solid #2c97b6;
+    border-bottom: 1px solid #2c97b6;
+}
+.form-group{
+    padding-right: 10px;
+}
+.btn.btn-cstm{
+	background-image: linear-gradient(to bottom,#38cbf5 0,#2c97b6 100%);
+	background-repeat: repeat-x;
+    border-color: #2c97b6;
+}
+.indention{
+	margin-left:50px;
+}
+/* Home */
+
+
+
+/* Registration */
+.regform {
+    margin-bottom: 0;
+}
+.regform .form-group-half {
+    width: 50%;
+    padding-right: 10px;
+}
+.regform label{
+	width: 100%;
+}
+.regform .birthdate input {
+    width: 20%;
+    margin-right: 10px;
+}
+.regform .inputmodified{
+	width: 100%;
+}
+.regform .form-group,
+.regform .birthdate input,
+.regform .birthdate select{
+	float: left;
+}
+.regform input,
+.regform select{
+	width: auto;
+}
+.selectWidth {
+    margin-right:10px;
+}
+/* Password Reset */
+.pwfrom .form-group {
+    padding-right: 10px;
+}
+/* Testimonials */
+
+
+
+
+/* Dentists */
+
+
+
+
+/* Clinics */
+
+
+
+
+/* Services */
+
+
+/* Footer */
+.footer{
+	background-image: linear-gradient(to bottom,#38cbf5 0,#2c97b6 100%);
+}
+.footer .content-container{
+	padding: 10px 0px !important;
+}
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+
+}

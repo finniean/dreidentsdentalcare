@@ -1,10 +1,12 @@
 <?php
 $title = "Dreident Dental Care - Testimonials";
 include "templates/header.php";
+include "templates/navigation.php";
 ?>
 
 <!-- begin page content -->
-    <div class="header clearfix">
+    <div class="pagecontent clearfix">
+	<div class="content-container">
 		<div class="pageheader">
             <h1>Patient's Testimonials</h1>
         </div>
@@ -86,7 +88,9 @@ include "templates/header.php";
 			</div>
 		</div>
     </div>
+</div>
 <!-- end page content -->
+
 
 <?php
 include "templates/footer.php";

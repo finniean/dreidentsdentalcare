@@ -1,18 +1,17 @@
 <?php
-$title = "Dreident Dental Care - Set Appointment";
+$title = "Dreident Dental Care - template";
 include "templates/header.php";
+include "templates/navigation.php";
 ?>
 
 <!-- begin page content -->
-    <div class="header clearfix">
-		<div class="pageheader">
-            <h1></h1>
-        </div>
-		<div class="pagecontent clearfix">
-		<h3></h3>
-			
-		</div>
-    </div>
+<div class="body">
+<div class="content-container clearfix">
+	<div class="pagecontent clearfix">
+
+	</div>
+</div>
+</div>
 <!-- end page content -->
 
 <?php
