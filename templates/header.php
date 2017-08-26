@@ -36,18 +36,18 @@
                 <img src="/images/logo.jpg" alt="logo">
             </a>
         </div>
-        <div class="login">
+        <div class="login clearfix">
             <div class="form-group">
                 <input type="text" class="form-control form-control-login" placeholder="Email">
             </div>
             <div class="form-group">
                 <input type="text" class="form-control form-control-login" placeholder="Password">
             </div>
-            <div class="btn-login">
+            <div class="btn-login clearfix">
                 <button type="submit" class="btn btn-cstm">Login</button>
             </div>
         </div>
-        <div class="login-links">
+        <div class="login-links clearfix">
                 <a href="register.php">
                     <p>Not yet registered?</p>
                 </a>

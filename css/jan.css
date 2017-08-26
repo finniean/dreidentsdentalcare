@@ -1,86 +1,7 @@
-body {
-    background: #161a1b;
-    margin: 0px;
-    color: white;
-}
-p {
-    text-align: justify;
-}
-.navline {
-    border-top: 1px solid #E8E8E8;
-}
-.pageheader {
-    border-bottom: 1px solid #E8E8E8;
-    padding-bottom: 30px;
-}
-.pageheader h1 {
-    margin: 0 !important;
-}
-.header {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 40px 0px;
-}
-.header-left {
-    width: 49%;
-    float: left;
-}
-.header-right {
-    width: 49%;
-    float: right;
-}
-.login-links {
-    width: 40%;
-    float: left;
-}
-.header-right .form-group {
-    float: left;
-    width: 40% !important;
-    margin-bottom: 0 !important;
-}
-input.form-control.form-control-login {
-    width: 97%;
-}
-.login-links a,
-.setappt a,
-.site_nav a {
-    color: white;
-}
 .login-links a:hover,
 .site_nav a:hover {
     color: #80f960;
     text-decoration: none;
-}
-.header.layout_2 {
-    padding-bottom: 0px;
-}
-.header_separator {
-    padding-top: 30px;
-    position: relative;
-    margin-bottom: -1px;
-}
-.header_container img {
-    width: 280px;
-}
-.nav {
-    border-bottom: 6px solid #E8E8E8;
-}
-.nav li {
-    float: left;
-    position: relative;
-    display: block;
-}
-.menu_separator {
-    background-color: #E8E8E8;
-    width: 1px;
-    height: 24px;
-    margin-top: 8px;
-    margin-left: -1px;
-    z-index: 1;
-}
-.menu_separator:hover {
-    background-color: #38cbf5;
 }
 .nav li.active a {
     background-image: linear-gradient(to bottom,#38cbf5 0,#2c97b6 100%);
@@ -92,116 +13,13 @@ input.form-control.form-control-login {
 	background-repeat: repeat-x;
     border-color: #2c97b6;
 }
-.nav li a {
-    color: white;
-}
-.padding_top_0 {
-    padding-top: 0px !important;
-}
-.menu1 {
-    margin: 0px;
-    padding: 0px;
-    clear: both;
-    width: 100%;
-}
-.pagecontent {
-    padding-top: 15px;
-}
-/* Registration */
-.regform{
-	width: 70%;
-	margin-bottom: 0;
-}
-.pwform{
-	width: 50%;
-}
-.regform input,
-.regform select{
-	width: auto;
-}
-.regform label{
-	width: 100%;
-}
-.regform .form-group,
-.regform #birthgroup input,
-.regform #birthgroup select{
-	float: left;
-}
-.regform #birthgroup input{
-	width: 15%;
-	margin-right:10px;
-}
-.selectWidth {
-    margin-right:10px;
-}
-.regform .inputmodified{
-	width: 100%;
-}
-.regform .form-group-half{
-	width: 50%;
-	padding-right: 10px;
-}
-/* Registration */
-/* Testimonials */
-.testimonials{
-	border: #E8E8E8 1px solid;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-.testimonials img{
-	width:150px;
-	height:150px;
-}
-.testimonials .tes-name{
-	text-align: right;
-}
-/* Testimonials */
-.setappt {
-    padding: 10px 0 10px 10px;
-    background-image: linear-gradient(to bottom,#38cbf5 0,#2c97b6 100%);
-}
-.setappt h3 {
-    margin: 10px 0 10px 10px !important;
-	text-decoration: underline;
-}
 .setappt a:hover {
     color: #333;
     text-decoration: none;
 }
-.column-left {
-    float: left;
-    width: 33%;
-}
-.column-center {
-    display: inline-block;
-    width: 34%;
-}
-.column-right {
-    float: right;
-    width: 33%;
-}
 .header.dentists p {
     margin-bottom: 30px;
     margin-top: 0;
-}
-.blueline {
-    margin: 0 0 30px;
-}
-.blueline:after {
-    content: "";
-    display: block;
-    bottom: 0;
-    width: 50px;
-    height: 2px;
-    background: #38cbf5;
-    margin-top: 10px;
-}
-.ourteam {
-    padding-top: 30px;
-}
-.dentistprof {
-    width: 225px;
-    margin: 0 auto;
 }
 .dentistprof h4 {
     text-align: center;
@@ -209,35 +27,4 @@ input.form-control.form-control-login {
     margin: 0;
 	background-image: linear-gradient(to bottom,#38cbf5 0,#2c97b6 100%);
 }
-.dentistprof p {
-    margin-top: 30px !important;
-    text-align: center;
-}
-.gmap {
-    height: 400px;
-    width: 50%;
-    float: right;
-}
-.locationinfo p{
-	margin-bottom: 30px;
-}
-button.btn.btn-cstm{
-	background-image: linear-gradient(to bottom,#38cbf5 0,#2c97b6 100%);
-	background-repeat: repeat-x;
-    border-color: #2c97b6;
-}
-.indention{
-	margin-left:50px;
-}
-.clearfix {
-    clear: both;
-}
-.footer_container {
-    padding: 20px 0px;
-	background-image: linear-gradient(to bottom,#38cbf5 0,#2c97b6 100%);
-}
-.site_nav {
-    width: 990px;
-    margin-left: auto;
-    margin-right: auto;
-}
+
