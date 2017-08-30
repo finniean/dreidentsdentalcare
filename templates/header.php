@@ -36,12 +36,12 @@
                 <img src="/images/logo.jpg" alt="logo">
             </a>
         </div>
-        <div class="login clearfix">
+        <form class="login clearfix" id='login' action='/includes/login.php' method='post' accept-charset='UTF-8'>
             <div class="form-group">
-                <input type="text" class="form-control form-control-login" placeholder="Email">
+                <input type="text" class="form-control form-control-login" placeholder="Email" name="email">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control form-control-login" placeholder="Password">
+                <input type="password" class="form-control form-control-login" placeholder="Password" name="password">
             </div>
             <div class="btn-login clearfix">
                 <button type="submit" class="btn btn-cstm">Login</button>
@@ -55,6 +55,6 @@
                     <p>Forgot Password?</p>
                 </a>
         </div>
-    </div>
+    </form>
 </div>
 <!-- HEADER -->

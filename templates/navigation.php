@@ -1,13 +1,13 @@
 <!-- NAVIGATION -->
 <div class="navigation">
 	<div class="content-container">
+	<!-- Mobile Navigation -->
     <nav id="nav-mobile" class="navbar" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-bar">
 					<p>Menu</p>
                 </button>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapsed" id="nav-bar">
                 <ul class="nav navbar-nav">
                 <li>
@@ -20,7 +20,7 @@
                     <a href="dentists.php">DENTISTS</a>
                 </li>
                 <li>
-                    <a href="location.php">CLINICS</a>
+                    <a href="location.php">CLINIC</a>
                 </li>
                 <li>
                     <a href="404.php">SERVICES</a>
@@ -28,6 +28,7 @@
                 </ul>
             </div>
     </nav>
+	<!-- Desktop Navigation -->
 	<nav id="nav-regular" class="navbar" role="navigation">
             <div class="navbar-content">
                 <ul class="nav">

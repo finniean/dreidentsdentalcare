@@ -67,6 +67,12 @@ a{
 	float: left;
 	margin-left: 15px;
 }
+.login-links a:hover,
+.footer li a:hover,
+.dentistssetappt a:hover {
+    color: #80f960 !important;
+    text-decoration: none;
+}
 /* Navigation */
 #nav-mobile{
     display: block!important;
@@ -85,7 +91,10 @@ nav .navbar-toggle{
 	float: none;
 	margin: 10px 0;
 }
-nav button{
+nav button,
+.nav li a:hover,
+.nav li.active a,
+.btn.btn-cstm{
 	background-image: linear-gradient(to bottom,#38cbf5 0,#2c97b6 100%)!important;
 	background-repeat: repeat-x!important;
     border-color: #2c97b6!important;
@@ -108,11 +117,6 @@ nav .navbar-collapsed{
 }
 .form-group{
     padding-right: 10px;
-}
-.btn.btn-cstm{
-	background-image: linear-gradient(to bottom,#38cbf5 0,#2c97b6 100%);
-	background-repeat: repeat-x;
-    border-color: #2c97b6;
 }
 .indention{
 	margin-left:50px;
@@ -194,7 +198,7 @@ nav .navbar-collapsed{
     padding-top: 30px;
 }
 .dentistsprofile{
-	margin-bottom: 30px;
+	margin: 0 auto 30px;
 }
 .dentistsprofile p{
 	text-align: center;
@@ -229,8 +233,28 @@ nav .navbar-collapsed{
 .footer .content-container{
 	padding: 10px 0px !important;
 }
+.footer-nav{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.footer-nav li{
+	margin-bottom: 10px;
+}
+.column1,
+.column2{
+	width: 30%;
+	float: left;
+	margin-right: 3%;
+}
+.column2 img{
+	width: 20px;
+	height: auto;
+	float: left;
+	margin-right: 5px;
+}
 @media only screen and (min-width: 600px) {
-    /* For tablets: */
+    /* -------------------------------For tablets:------------------------------- */
 /* Header */
 .login .form-group{
 	width: 50%;
@@ -275,6 +299,10 @@ nav .navbar-collapsed{
 }
 }
 @media only screen and (min-width: 768px) {
-    /* For desktop: */
-
+    /* -------------------------------For desktop:------------------------------- */
+/* Dentists */
+.dentistsprofile {
+	width: 33.33%;
+    float: left;
+}
 }
