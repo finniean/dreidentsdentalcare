@@ -5,19 +5,19 @@
             <h4>Site Navigation</h4>
             <ul class="footer-nav">
                 <li>
-                    <a href="home.php">Home</a>
+                    <a href="/index.php">Home</a>
                 </li>
                 <li>
-                    <a href="testimonials.php">Testimonials</a>
+                    <a href="/pages/testimonials.php">Testimonials</a>
                 </li>
                 <li>
-                    <a href="dentists.php">Dentists</a>
+                    <a href="/pages/dentists.php">Dentists</a>
                 </li>
                 <li>
-                    <a href="location.php">Clinic</a>
+                    <a href="/pages/location.php">Clinic</a>
                 </li>
                 <li>
-                    <a href="404.php">Services</a>
+                    <a href="/pages/404.php">Services</a>
                 </li>
                 </ul>
         </div>

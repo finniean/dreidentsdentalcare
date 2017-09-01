@@ -1,4 +1,4 @@
-<?php $title="Dreident Dental Care - TEMPLATE" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php'); ?>
+<?php $title="Dreident Dental Care - Admin" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php'); ?>
 
 <!-- begin page content -->
 <div class="pagebody clearfix">

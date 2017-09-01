@@ -1,5 +1,6 @@
 <?php
-require('db.php');
+
+require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
 
 $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
 $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
@@ -26,8 +27,7 @@ VALUES
 ('$first_name', '$last_name', '$email', '$password', '$birth_month', '$birth_day', '$birth_year', '$home_address', '$phone_number', '$mobile_number', '$occupation', '$business_phone', '$spouse_name', '$spouse_phone', '$medical_doctor', '$last_visit', '$dentist_visit', '$referral')";
 
 if(mysqli_query($link, $sql)){
-	
-    header("Location: /home.php");
+    header("Location: /pages/thankyou.php");
 } 
 
 else{
@@ -35,4 +35,5 @@ else{
 }
 
 mysqli_close($link);
+
 ?>

@@ -1,18 +1,25 @@
-<?php
-include("includes/auth.php");
-?>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Welcome Home</title>
-<link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-<div class="form">
-<p>Welcome <?php echo $_SESSION['first_name']; ?>!</p>
-<p>This is secure area.</p>
-<p><a href="dashboard.php">Dashboard</a></p>
-<a href="includes/logout.php">Logout</a>
+<?php $title="Dreident Dental Care - Home" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php'); ?>
+
+<!-- begin page content -->
+<div class="pagebody clearfix">
+    <div class="content-container">
+        <div class="home-carousel">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="../images/slideshow1.jpg" alt="First Slide">
+                    </div>
+                    <div class="item">
+                        <img src="../images/slideshow2.jpg" alt="Second Slide">
+                    </div>
+                    <div class="item">
+                        <img src="../images/slideshow3.jpg" alt="Third Slide">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-</body>
-</html>
+<!-- end page content -->
+
+<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); ?>

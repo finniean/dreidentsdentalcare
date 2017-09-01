@@ -13,7 +13,7 @@
          <h3 class="blueline">Dont have an account with us yet?</h3>
          <p>We appreciate the confidence you place with us to you with the dental service. To assist us us in serving you better, kindly fill up this form.</p>
          <p class="reqfields">* required fields</p>
-         <form class="regform clearfix" id='register' action='/includes/register.php' method='post' accept-charset='UTF-8'>
+         <form class="regform clearfix" id='insert_register' action='/includes/insert_register.php' method='post'>
             <div class="fullname clearfix">
                <div class="form-group form-group-half">
                   <label>First name</label>
@@ -30,19 +30,19 @@
                   <select id="selectDate " class="form-control selectWidth" name="birth_month">
                      @for ($i = 1; $i
                      <=3 1; $i++)
-                     <option class=" ">Month</option>
-                     <option class=" ">January</option>
-                     <option class=" ">February</option>
-                     <option class=" ">March</option>
-                     <option class=" ">April</option>
-                     <option class=" ">May</option>
-                     <option class=" ">June</option>
-                     <option class=" ">July</option>
-                     <option class=" ">August</option>
-                     <option class=" ">September</option>
-                     <option class=" ">October</option>
-                     <option class=" ">November</option>
-                     <option class=" ">December</option>
+                     <option>Month</option>
+                     <option>January</option>
+                     <option>February</option>
+                     <option>March</option>
+                     <option>April</option>
+                     <option>May</option>
+                     <option>June</option>
+                     <option>July</option>
+                     <option>August</option>
+                     <option>September</option>
+                     <option>October</option>
+                     <option>November</option>
+                     <option>December</option>
                      @endfor
                   </select>
                   <input type="number" class="form-control " placeholder="Day" name="birth_day">

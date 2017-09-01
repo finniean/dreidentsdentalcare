@@ -1,14 +1,19 @@
+<?php session_start(); ?>
 <html>
+
 <head>
-    <title><?php echo $title; ?></title>
+    <title>
+        <?php echo $title; ?>
+    </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
-	<script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jqueryui.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/css/jan.css">
-	<link rel="stylesheet" href="/css/ddcstyleresponsive.css">
+    <link rel="stylesheet" href="/css/jqueryui.css">
+    <link rel="stylesheet" href="/css/ddcstyleresponsive.css">
     <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
@@ -27,34 +32,41 @@
     <meta name="msapplication-TileImage" content="/images/favicon/images/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
+
 <body>
-<!-- HEADER -->
-<div class="header">
-    <div class="content-container clearfix">
-        <div class="branding">
-            <a href="home.php" title="Dreidents Dental Clinic">
-                <img src="/images/logo.jpg" alt="logo">
-            </a>
-        </div>
-        <form class="login clearfix" id='login' action='/includes/login.php' method='post' accept-charset='UTF-8'>
-            <div class="form-group">
-                <input type="text" class="form-control form-control-login" placeholder="Email" name="email">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control form-control-login" placeholder="Password" name="password">
-            </div>
-            <div class="btn-login clearfix">
-                <button type="submit" class="btn btn-cstm">Login</button>
-            </div>
-        </div>
-        <div class="login-links clearfix">
-                <a href="register.php">
-                    <p>Not yet registered?</p>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="content-container clearfix">
+            <div class="branding">
+                <a href="/index.php" title="Dreidents Dental Clinic">
+                    <img src="/images/logo.jpg" alt="logo">
                 </a>
-				<a href="pwreset.php">
-                    <p>Forgot Password?</p>
-                </a>
+            </div>
+            <div class="notloggedin">
+                <form class="login clearfix" id='login' action='/includes/login.php' method='post' accept-charset='UTF-8'>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-login" placeholder="Email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control form-control-login" placeholder="Password" name="password">
+                    </div>
+                    <div class="btn-login clearfix">
+                        <button type="submit" class="btn btn-cstm">Login</button>
+                    </div>
+                </form>
+                <div class="login-links clearfix">
+                    <a href="register.php">
+                        <p>Not yet registered?</p>
+                    </a>
+                    <a href="pwreset.php">
+                        <p>Forgot Password?</p>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="loggedin" style="float: right; padding-right: 10px;">
+		<p>Welcome <?php echo $_SESSION['email']; ?>!</p>
+		<a href="includes/logout.php">Logout</a>
+		</div> -->
         </div>
-    </form>
-</div>
-<!-- HEADER -->
+    </div>
+    <!-- HEADER -->

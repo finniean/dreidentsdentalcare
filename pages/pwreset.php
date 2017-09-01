@@ -1,8 +1,5 @@
-<?php
-   $title = "Dreident Dental Care - Password Reset";
-   include "templates/header.php";
-   include "templates/navigation.php";
-   ?>
+<?php $title="Dreident Dental Care - Password Reset" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php'); ?>
+
 <!-- begin page content -->
 <div class="pagebody clearfix">
    <div class="content-container">
@@ -23,6 +20,5 @@
    </div>
 </div>
 <!-- end page content -->
-<?php
-   include "templates/footer.php";
-   ?>
+
+<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); ?>
