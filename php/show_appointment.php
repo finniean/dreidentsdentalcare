@@ -15,17 +15,20 @@ $result=mysqli_query($link, $sql);
       </div>
       <div class="pagecontent clearfix">
          <table>
-            <tr>
+
+            <?php if (mysqli_num_rows($result)> 0) { echo "
+			<tr>
                <th>Date</th>
                <th>Time</th>
                <th>Service</th>
             </tr>
-            <?php if (mysqli_num_rows($result)> 0) { while($row = mysqli_fetch_assoc($result)) { echo "
+			";
+			while($row = mysqli_fetch_assoc($result)) { echo "
                <tr class='resultsrow'>
                    <td>" . $row["appt_date"] . "</td>
                    <td>" . $row["appt_time"] . "</td>
                    <td>" . $row["service"] . "</td>
-               </tr>"; } } else { echo "0 results"; } ?>
+               </tr>"; } } else { echo "<div class='alert alert-success' role='alert'><p>0 results</p></div>"; } ?>
          </table>
       </div>
    </div>

@@ -43,7 +43,7 @@
                 </a>
             </div>
             <div class="notloggedin">
-                <form class="login clearfix" id='login' action='/includes/login.php' method='post' accept-charset='UTF-8'>
+                <form class="login clearfix" id='login' action='/php/login.php' method='post' accept-charset='UTF-8'>
                     <div class="form-group">
                         <input type="text" class="form-control form-control-login" placeholder="Email" name="email">
                     </div>
@@ -55,10 +55,10 @@
                     </div>
                 </form>
                 <div class="login-links clearfix">
-                    <a href="register.php">
+                    <a href="/pages/register.php">
                         <p>Not yet registered?</p>
                     </a>
-                    <a href="pwreset.php">
+                    <a href="/pages/pwreset.php">
                         <p>Forgot Password?</p>
                     </a>
                 </div>

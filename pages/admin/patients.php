@@ -4,21 +4,14 @@
 <div class="pagebody clearfix">
     <div class="content-container">
         <div class="pageheader">
-            <h1>Check Appointments</h1>
+            <h1>Patient's Information</h1>
         </div>
         <div class="pagecontent clearfix">
 
-            <form class="apptform clearfix" id='show_appointment' action='/php/show_appointment.php' method='post'>
+            <form class="apptform clearfix" id='show_appointment' action='/php/show_patients.php' method='post'>
                 <div class="appt_date clearfix">
                     <div class="form-group">
-                        <div class='input-group date' id='datetimepicker1'>
-                            <input type="text" id="datepicker" name="appt_date">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                            <script>
-                                $(function() {
-                                    $("#datepicker").datepicker();
-                                });
-                            </script>
+                            <input type="text" id="datepicker" name="first_name">
                         </div>
                     </div>
                 </div>

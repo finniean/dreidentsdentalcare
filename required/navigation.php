@@ -59,13 +59,13 @@
 	</div>
 </div>
 <script>
-var selector = '.nav li';
+var selector = ".nav li";
     var url = window.location.href;
-    var target = url.split('/');
+    var target = url.split('/pages/');
      $(selector).each(function(){
-        if($(this).find('a').attr('href')===(''+target[target.length-1])){
-          $(selector).removeClass('active');
-          $(this).addClass('active');
+        if($(this).find('a').attr("href")===('/pages/'+target[target.length-1])){
+          $(selector).removeClass("active");
+          $(this).addClass("active");
         }
      });
 </script>

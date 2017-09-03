@@ -1,8 +1,5 @@
-<?php
-   $title = "Dreident Dental Care - Register";
-   include "templates/header.php";
-   include "templates/navigation.php";
-   ?>
+<?php $title="Dreident Dental Care - Registration" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php'); ?>
+
 <!-- begin page content -->
 <div class="pagebody clearfix">
    <div class="content-container">
@@ -13,7 +10,7 @@
          <h3 class="blueline">Dont have an account with us yet?</h3>
          <p>We appreciate the confidence you place with us to you with the dental service. To assist us us in serving you better, kindly fill up this form.</p>
          <p class="reqfields">* required fields</p>
-         <form class="regform clearfix" id='insert_register' action='/includes/insert_register.php' method='post'>
+         <form class="regform clearfix" id='insert_register' action='/php/insert_register.php' method='post'>
             <div class="fullname clearfix">
                <div class="form-group form-group-half">
                   <label>First name</label>
@@ -126,6 +123,5 @@
    </div>
 </div>
 <!-- end page content -->
-<?php
-   include "templates/footer.php";
-   ?>
+
+<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); ?>

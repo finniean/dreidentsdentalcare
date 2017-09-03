@@ -37,9 +37,9 @@
 <script>
 var adminselector = '.nav li';
     var url = window.location.href;
-    var target = url.split('/');
+    var target = url.split('/pages/admin/');
      $(adminselector).each(function(){
-        if($(this).find('a').attr('href')===(''+target[target.length-1])){
+        if($(this).find('a').attr('href')===('/pages/admin/'+target[target.length-1])){
           $(adminselector).removeClass('active');
           $(this).addClass('active');
         }
