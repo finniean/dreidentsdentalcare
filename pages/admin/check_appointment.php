@@ -7,24 +7,33 @@
             <h1>Check Appointments</h1>
         </div>
         <div class="pagecontent clearfix">
-
-            <form class="apptform clearfix" id='show_appointment' action='/php/show_appointment.php' method='post'>
-                <div class="appt_date clearfix">
-                    <div class="form-group">
+            <?php
+            if($_SESSION['uid'] === '1'){
+            echo "
+            <form class='apptform clearfix' id='show_appointment' action='/php/show_appointment.php' method='post'>
+                <div class='appt_date clearfix'>
+                    <div class='form-group'>
                         <div class='input-group date' id='datetimepicker1'>
-                            <input type="text" id="datepicker" name="appt_date">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                            <input type='text' id='datepicker' name='appt_date'>
+                            <span class='input-group-addon'><span class='glyphicon glyphicon-calendar'></span>
                             <script>
                                 $(function() {
-                                    $("#datepicker").datepicker();
+                                    $('#datepicker').datepicker();
                                 });
                             </script>
                         </div>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-cstm" value="Search Appointments">
+                <input type='submit' class='btn btn-cstm' value='Search Appointments'>
             </form>
-
+            ";}
+            else{
+            echo "
+            <div class='alert alert-danger'>
+              You need the <strong>Admin</strong> role to view this page!
+            </div>
+            ";}
+            ?>
         </div>
     </div>
 </div>

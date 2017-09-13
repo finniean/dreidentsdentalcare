@@ -16,6 +16,12 @@
                 <li>
                     <a href="/pages/admin/check_appointment.php">APPOINTMENTS</a>
                 </li>
+                <li>
+                    <a href="/pages/admin/set_appointment.php">SET APPOINTMENTS</a>
+                </li>
+                <li>
+                    <a href="/pages/admin/register.php">REGISTER PATIENT</a>
+                </li>
                 </ul>
             </div>
     </nav>
@@ -28,6 +34,12 @@
                 </li>
                 <li>
                     <a href="/pages/admin/check_appointment.php">APPOINTMENTS</a>
+                </li>
+                <li>
+                    <a href="/pages/admin/set_appointment.php">SET APPOINTMENTS</a>
+                </li>
+                <li>
+                    <a href="/pages/admin/register.php">REGISTER PATIENT</a>
                 </li>
                 </ul>
             </div>

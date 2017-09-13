@@ -25,9 +25,6 @@
                 <li>
                     <a href="/pages/404.php">SERVICES</a>
                 </li>
-				<li>
-                    <a href="/pages/setappointment.php">SET APPOINTMENT</a>
-                </li>
                 </ul>
             </div>
     </nav>
@@ -49,9 +46,6 @@
                 </li>
                 <li>
                     <a href="/pages/404.php">SERVICES</a>
-                </li>
-				<li>
-                    <a href="/pages/setappointment.php">SET APPOINTMENT</a>
                 </li>
                 </ul>
             </div>

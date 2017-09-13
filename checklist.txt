@@ -1,0 +1,30 @@
+___Patients side
+Index
+Login
+Register
+Forgot Password
+Appointment
+Contact
+About Us
+Dentists
+Clinic
+Services
+
+___Admin Side
+Patient;s Info
+Current Appointments
+Monthly Appointment Reports
+
+Checklist.
+DONE *Add restriction toa admin page
+DONE *hide login form once logged in
+DONE *automatically add name for set appointment
+DONE *set appointment admin side
+*thank you after setting appointment
+*email after reg and set appointment
+*other searrch criteria for patients and appointment
+*Form validator
+*Email a day before appointment day
+*User time out
+*PHP Self
+*Edit info

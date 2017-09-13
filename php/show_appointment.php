@@ -14,22 +14,34 @@ $result=mysqli_query($link, $sql);
          <h1>Check Appointments</h1>
       </div>
       <div class="pagecontent clearfix">
+        <div class="search_results">
          <table>
 
-            <?php if (mysqli_num_rows($result)> 0) { echo "
-			<tr>
+            <?php
+            if (mysqli_num_rows($result)> 0) { echo "
+              <tr>
                <th>Date</th>
                <th>Time</th>
                <th>Service</th>
-            </tr>
-			";
-			while($row = mysqli_fetch_assoc($result)) { echo "
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>Email</th>
+               <th>Mobile Number</th>
+              </tr>";
+              while($row = mysqli_fetch_assoc($result)) { echo "
                <tr class='resultsrow'>
                    <td>" . $row["appt_date"] . "</td>
                    <td>" . $row["appt_time"] . "</td>
                    <td>" . $row["service"] . "</td>
-               </tr>"; } } else { echo "<div class='alert alert-success' role='alert'><p>0 results</p></div>"; } ?>
+                   <td>" . $row["first_name"] . "</td>
+                   <td>" . $row["last_name"] . "</td>
+                   <td>" . $row["email"] . "</td>
+                   <td>" . $row["mobile_number"] . "</td>
+               </tr>"; }} else { echo "<div class='alert alert-success' role='alert'><p>0 results</p></div>"; }
+            ?>
+
          </table>
+         </div>
       </div>
    </div>
 </div>

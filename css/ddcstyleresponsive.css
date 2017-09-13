@@ -22,7 +22,7 @@ a{
     clear: both;
 }
 .pagebody .content-container{
-	padding-top: 0 !important;
+	padding-top: 0;
 }
 .content-container{
 	width: 90%;

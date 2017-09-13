@@ -1,4 +1,4 @@
-<?php $title="Dreident Dental Care - Set Appointment" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php'); ?>
+<?php $title="Dreident Dental Care - Set Appointment" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php'); ?>
 
 <!-- begin page content -->
 <div class="pagebody clearfix">
@@ -7,7 +7,7 @@
          <h1>Set Appointment</h1>
       </div>
       <div class="pagecontent clearfix">
-         <form class="apptform clearfix" id='insert_appointment' action='/php/insert_appointment.php' method='post'>
+         <form class="apptform clearfix" id='insert_appointment' action='/php/insert_appointment_admin.php' method='post'>
             <div class="appt_date clearfix">
                <div class="form-group input-group date" id='datetimepicker1'>
 					<label>Date</label>
@@ -57,6 +57,28 @@
 					      <option>Root Canal</option>
                      @endfor
                   </select>
+               </div>
+            </div>
+            <div class="clearfix">
+               <div class="form-group">
+                  <label>First name</label>
+                  <input type="text" class="form-control" name="first_name">
+               </div>
+               <div class="form-group">
+                  <label for="lastname">Last name</label>
+                  <input type="text" class="form-control" name="last_name">
+               </div>
+            </div>
+            <div class="clearfix">
+               <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" class="form-control" name="email">
+               </div>
+            </div>
+            <div class="clearfix">
+               <div class="form-group">
+                  <label>Mobile Number</label>
+                  <input type="text" class="form-control" name="mobile_number">
                </div>
             </div>
             <input type="submit" class="btn btn-cstm" value="Set Appointment">

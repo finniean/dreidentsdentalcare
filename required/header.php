@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <html>
 
 <head>
@@ -42,31 +41,50 @@
                     <img src="/images/logo.jpg" alt="logo">
                 </a>
             </div>
-            <div class="notloggedin">
-                <form class="login clearfix" id='login' action='/php/login.php' method='post' accept-charset='UTF-8'>
-                    <div class="form-group">
-                        <input type="text" class="form-control form-control-login" placeholder="Email" name="email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control form-control-login" placeholder="Password" name="password">
-                    </div>
-                    <div class="btn-login clearfix">
-                        <button type="submit" class="btn btn-cstm">Login</button>
-                    </div>
-                </form>
-                <div class="login-links clearfix">
-                    <a href="/pages/register.php">
-                        <p>Not yet registered?</p>
-                    </a>
-                    <a href="/pages/pwreset.php">
-                        <p>Forgot Password?</p>
-                    </a>
-                </div>
-            </div>
-            <!-- <div class="loggedin" style="float: right; padding-right: 10px;">
-		<p>Welcome <?php echo $_SESSION['email']; ?>!</p>
-		<a href="includes/logout.php">Logout</a>
-		</div> -->
+                <?php
+                session_start();
+                if (isset($_SESSION["username"]))
+                  {
+                    echo " 
+                                <div class='loggedin'> 
+                                    <div class='loggedname'>
+                                        <p>Welcome " . $_SESSION["username"] . "!</p>
+                                    </div>
+                                    <div class='login-links clearfix'>
+                                        <a href='/pages/setappointment.php'><p>Set Appointment</p></a> 
+                                        <a href='/php/logout.php'><p>Logout</p></a>
+                                    </div
+                                </div>
+                                </div>  
+                                ";
+                  }
+                else
+                  {
+                    echo " 
+                    <div class='notloggedin'> 
+                        <form class='login clearfix' id='login' action='/php/login.php' method='post' accept-charset='UTF-8'> 
+                                        <div class='form-group'> 
+                                            <input type='text' class='form-control form-control-login' placeholder='Email' name='email'> 
+                                        </div> 
+                                        <div class='form-group'> 
+                                            <input type='password' class='form-control form-control-login' placeholder='Password' name='password'> 
+                                        </div> 
+                                        <div class='btn-login clearfix'> 
+                                            <button type='submit' class='btn btn-cstm'>Login</button> 
+                                        </div> 
+                                    </form> 
+                                    <div class='login-links clearfix'> 
+                                        <a href='/pages/register.php'> 
+                                            <p>Not yet registered?</p> 
+                                        </a> 
+                                        <a href='/pages/pwreset.php'> 
+                                            <p>Forgot Password?</p> 
+                                        </a> 
+                                    </div> 
+                                </div></div> ";
+                  }
+                ?>  
         </div>
     </div>
+<div>
     <!-- HEADER -->
