@@ -1,12 +1,12 @@
-<?php $title="Dreident Dental Care - Appointments" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php'); ?>
+<?php $title='Dreident Dental Care - Appointments' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php'); ?>
 
 <!-- begin page content -->
-<div class="pagebody clearfix">
-    <div class="content-container">
-        <div class="pageheader">
+<div class='pagebody clearfix'>
+    <div class='content-container'>
+        <div class='pageheader'>
             <h1>Check Appointments</h1>
         </div>
-        <div class="pagecontent clearfix">
+        <div class='pagecontent clearfix'>
             <?php
             if($_SESSION['uid'] === '1'){
             echo "
@@ -14,7 +14,7 @@
                 <div class='appt_date clearfix'>
                     <div class='form-group'>
                         <div class='input-group date' id='datetimepicker1'>
-                            <input type='text' id='datepicker' name='appt_date'>
+                            <input type='text' class='form-control' id='datepicker' name='appt_date'>
                             <span class='input-group-addon'><span class='glyphicon glyphicon-calendar'></span>
                             <script>
                                 $(function() {

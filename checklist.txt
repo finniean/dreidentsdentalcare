@@ -20,6 +20,8 @@ DONE *Add restriction toa admin page
 DONE *hide login form once logged in
 DONE *automatically add name for set appointment
 DONE *set appointment admin side
+DONE *Edit, view, delete patient information
+DONE *fix registration birth date
 *thank you after setting appointment
 *email after reg and set appointment
 *other searrch criteria for patients and appointment
@@ -28,3 +30,10 @@ DONE *set appointment admin side
 *User time out
 *PHP Self
 *Edit info
+*remove session remains
+*fix design
+*disable time if already taken
+*fix header
+*footer close links
+*fix classes
+*fix date picker

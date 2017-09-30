@@ -1,30 +1,30 @@
-<?php $title="Dreident Dental Care - Set Appointment" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php'); ?>
+<?php $title='Dreident Dental Care - Set Appointment' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php'); ?>
 
 <!-- begin page content -->
-<div class="pagebody clearfix">
-   <div class="content-container">
-      <div class="pageheader">
+<div class='pagebody clearfix'>
+   <div class='content-container'>
+      <div class='pageheader'>
          <h1>Set Appointment</h1>
       </div>
-      <div class="pagecontent clearfix">
-         <form class="apptform clearfix" id='insert_appointment' action='/php/insert_appointment.php' method='post'>
-            <div class="appt_date clearfix">
-               <div class="form-group input-group date" id='datetimepicker1'>
+      <div class='pagecontent clearfix'>
+         <form class='apptform clearfix' id='insert_appointment' action='/php/insert_appointment.php' method='post'>
+            <div class='appt_date clearfix'>
+               <div class='form-group input-group date' id='datetimepicker1'>
 					<label>Date</label>
-                     <input type="text" id="datepicker" name="appt_date">
-                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                     <input type='text' id='datepicker' name='appt_date'>
+                     <span class='input-group-addon'><span class='glyphicon glyphicon-calendar'></span>
                      </span>
                      <script>
                         $( function() {
-                          $( "#datepicker" ).datepicker();
+                          $( '#datepicker' ).datepicker();
                         } );
                      </script>
                </div>
             </div>
-            <div class="apptime clearfix">
-               <div class="form-group">
+            <div class='apptime clearfix'>
+               <div class='form-group'>
                   <label>Time</label>
-                  <select id="selectDate " class="form-control selectWidth" name="appt_time">
+                  <select id='selectDate ' class='form-control selectWidth' name='appt_time'>
                      @for ($i = 1; $i
                      <=3 1; $i++)
                      <option selected disabled>Select Time</option>
@@ -36,10 +36,10 @@
                   </select>
                </div>
             </div>
-            <div class="services clearfix">
-               <div class="form-group">
+            <div class='services clearfix'>
+               <div class='form-group'>
                   <label>Service to be done</label>
-                  <select id="selectDate " class="form-control selectWidth" name="services">
+                  <select id='selectDate ' class='form-control selectWidth' name='services'>
                      @for ($i = 1; $i
                      <=3 1; $i++)
                      <option selected disabled>Services</option>
@@ -59,7 +59,7 @@
                   </select>
                </div>
             </div>
-            <input type="submit" class="btn btn-cstm" value="Set Appointment">
+            <input type='submit' class='btn btn-cstm' value='Set Appointment'>
          </form>
       </div>
    </div>

@@ -136,15 +136,13 @@ nav .navbar-collapsed{
 .regform label{
 	width: 100%;
 }
-.regform .birthdate input {
-    width: 20%;
+.regform .birthdate select {
     margin-right: 10px;
 }
 .regform .inputmodified{
 	width: 100%;
 }
 .regform .form-group,
-.regform .birthdate input,
 .regform .birthdate select{
 	float: left;
 }
@@ -300,6 +298,23 @@ nav .navbar-collapsed{
 }
 @media only screen and (min-width: 768px) {
     /* -------------------------------For desktop:------------------------------- */
+/* Header */
+.branding {
+    width: 40%;
+    float: left;
+}
+.notloggedin{
+    width: 50%;
+    float: right;
+}
+.login .form-group {
+    width: 40%;
+    float: left;
+    clear: none;
+}
+.login .btn-login {
+    clear: none;
+}
 /* Dentists */
 .dentistsprofile {
 	width: 33.33%;

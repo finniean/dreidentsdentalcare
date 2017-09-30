@@ -1,30 +1,30 @@
-<?php $title="Dreident Dental Care - Set Appointment" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php'); ?>
+<?php $title='Dreident Dental Care - Set Appointment' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php'); ?>
 
 <!-- begin page content -->
-<div class="pagebody clearfix">
-   <div class="content-container">
-      <div class="pageheader">
+<div class='pagebody clearfix'>
+   <div class='content-container'>
+      <div class='pageheader'>
          <h1>Set Appointment</h1>
       </div>
-      <div class="pagecontent clearfix">
-         <form class="apptform clearfix" id='insert_appointment' action='/php/insert_appointment_admin.php' method='post'>
-            <div class="appt_date clearfix">
-               <div class="form-group input-group date" id='datetimepicker1'>
-					<label>Date</label>
-                     <input type="text" id="datepicker" name="appt_date">
-                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                     </span>
-                     <script>
-                        $( function() {
-                          $( "#datepicker" ).datepicker();
-                        } );
-                     </script>
-               </div>
+      <div class='pagecontent clearfix'>
+         <form class='apptform clearfix' id='insert_appointment' action='/php/insert_appointment_admin.php' method='post'>
+            <div class='appt_date clearfix'>
+               <div class='form-group'>
+                  <div class='input-group date' id='datetimepicker1'>
+                     <input type='text' class='form-control' id='datepicker' name='appt_date'>
+                     <span class='input-group-addon'><span class='glyphicon glyphicon-calendar'></span>
+                        <script>
+                           $(function() {
+                               $('#datepicker').datepicker();
+                           });
+                        </script>
+                     </div>
+                  </div>
             </div>
-            <div class="apptime clearfix">
-               <div class="form-group">
+            <div class='apptime clearfix'>
+               <div class='form-group'>
                   <label>Time</label>
-                  <select id="selectDate " class="form-control selectWidth" name="appt_time">
+                  <select id='selectDate ' class='form-control selectWidth' name='appt_time'>
                      @for ($i = 1; $i
                      <=3 1; $i++)
                      <option selected disabled>Select Time</option>
@@ -36,10 +36,10 @@
                   </select>
                </div>
             </div>
-            <div class="services clearfix">
-               <div class="form-group">
+            <div class='services clearfix'>
+               <div class='form-group'>
                   <label>Service to be done</label>
-                  <select id="selectDate " class="form-control selectWidth" name="services">
+                  <select id='selectDate ' class='form-control selectWidth' name='services'>
                      @for ($i = 1; $i
                      <=3 1; $i++)
                      <option selected disabled>Services</option>
@@ -59,29 +59,29 @@
                   </select>
                </div>
             </div>
-            <div class="clearfix">
-               <div class="form-group">
+            <div class='clearfix'>
+               <div class='form-group'>
                   <label>First name</label>
-                  <input type="text" class="form-control" name="first_name">
+                  <input type='text' class='form-control' name='first_name'>
                </div>
-               <div class="form-group">
-                  <label for="lastname">Last name</label>
-                  <input type="text" class="form-control" name="last_name">
+               <div class='form-group'>
+                  <label for='lastname'>Last name</label>
+                  <input type='text' class='form-control' name='last_name'>
                </div>
             </div>
-            <div class="clearfix">
-               <div class="form-group">
+            <div class='clearfix'>
+               <div class='form-group'>
                   <label>Email</label>
-                  <input type="text" class="form-control" name="email">
+                  <input type='text' class='form-control' name='email'>
                </div>
             </div>
-            <div class="clearfix">
-               <div class="form-group">
+            <div class='clearfix'>
+               <div class='form-group'>
                   <label>Mobile Number</label>
-                  <input type="text" class="form-control" name="mobile_number">
+                  <input type='text' class='form-control' name='mobile_number'>
                </div>
             </div>
-            <input type="submit" class="btn btn-cstm" value="Set Appointment">
+            <input type='submit' class='btn btn-cstm' value='Set Appointment'>
          </form>
       </div>
    </div>
