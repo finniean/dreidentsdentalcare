@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
     <script src="/js/jquery.min.js"></script>
-    <script src="/js/jqueryui.js"></script>
+    <script src="/js/jquery.ui.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/css/jqueryui.css">
+    <link rel="stylesheet" href="/css/jquery.ui.css">
     <link rel="stylesheet" href="/css/ddcstyleresponsive.css">
     <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
@@ -43,46 +43,42 @@
             </div>
                 <?php
                 session_start();
-                if (isset($_SESSION["username"]))
-                  {
+                if (isset($_SESSION["username"])) {
                     echo " 
-                                <div class='loggedin'> 
-                                    <div class='loggedname'>
-                                        <p>Welcome " . $_SESSION["username"] . "!</p>
-                                    </div>
-                                    <div class='login-links clearfix'>
-                                        <a href='/pages/setappointment.php'><p>Set Appointment</p></a> 
-                                        <a href='/php/logout.php'><p>Logout</p></a>
-                                    </div
-                                </div>
-                                </div>  
-                                ";
-                  }
-                else
-                  {
+                    <div class='loggedin'> 
+                        <div class='loggedname'>
+                            <p>Welcome " . $_SESSION["username"] . "!</p>
+                        </div>
+                        <div class='login-links clearfix'>
+                            <a href='/pages/setappointment.php'><p>Set Appointment</p></a> 
+                            <a href='/php/logout.php'><p>Logout</p></a>
+                        </div
+                    </div>
+                    </div>" ;}
+                else {
                     echo " 
                     <div class='notloggedin'> 
                         <form class='login clearfix' id='login' action='/php/login.php' method='post' accept-charset='UTF-8'> 
-                                        <div class='form-group'> 
-                                            <input type='text' class='form-control form-control-login' placeholder='Email' name='email'> 
-                                        </div> 
-                                        <div class='form-group'> 
-                                            <input type='password' class='form-control form-control-login' placeholder='Password' name='password'> 
-                                        </div> 
-                                        <div class='btn-login clearfix'> 
-                                            <button type='submit' class='btn btn-cstm'>Login</button> 
-                                        </div> 
-                                    </form> 
-                                    <div class='login-links clearfix'> 
-                                        <a href='/pages/register.php'> 
-                                            <p>Not yet registered?</p> 
-                                        </a> 
-                                        <a href='/pages/pwreset.php'> 
-                                            <p>Forgot Password?</p> 
-                                        </a> 
-                                    </div> 
-                                </div></div> ";
-                  }
+                            <div class='form-group'> 
+                                <input type='text' class='form-control form-control-login' placeholder='Email' name='email'> 
+                            </div> 
+                            <div class='form-group'> 
+                                <input type='password' class='form-control form-control-login' placeholder='Password' name='password'> 
+                            </div> 
+                            <div class='btn-login clearfix'> 
+                                <button type='submit' class='btn btn-cstm'>Login</button> 
+                            </div> 
+                        </form> 
+                            <div class='login-links clearfix'> 
+                                <a href='/pages/register.php'> 
+                                    <p>Not yet registered?</p> 
+                                </a> 
+                                <a href='/pages/pwreset.php'> 
+                                    <p>Forgot Password?</p> 
+                                </a> 
+                            </div> 
+                        </div>
+                    </div>" ;}
                 ?>  
         </div>
     </div>

@@ -22,15 +22,20 @@ DONE *automatically add name for set appointment
 DONE *set appointment admin side
 DONE *Edit, view, delete patient information
 DONE *fix registration birth date
-*thank you after setting appointment
+DONE *other searrch criteria for patients
+DONE FOR SOME REASON *remove session remains
+DONE *add "Search Again" button for queries
+DONE *ADMIN thank you after setting appointment
+DONE *thank you after setting appointment
+DONE *other searrch criteria for appointment
+*Fix view/edit delete
+
+*add required fields on FIrst and Last name check patients
 *email after reg and set appointment
-*other searrch criteria for patients and appointment
 *Form validator
 *Email a day before appointment day
 *User time out
 *PHP Self
-*Edit info
-*remove session remains
 *fix design
 *disable time if already taken
 *fix header

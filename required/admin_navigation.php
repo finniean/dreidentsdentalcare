@@ -29,7 +29,7 @@
 	<nav id='nav-regular' class='navbar' role='navigation'>
             <div class='navbar-content'>
                 <ul class='nav'>
-                <li CLASS='active'>
+                <li>
                     <a href='/pages/admin/patients.php'>PATIENTS</a>
                 </li>
                 <li>

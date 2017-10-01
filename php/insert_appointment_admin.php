@@ -16,7 +16,7 @@ VALUES
 ('$appt_date', '$appt_time', '$services', '$first_name', '$last_name', '$email', '$mobile_number')";
 
 if(mysqli_query($link, $sql)){
-    header("Location: /pages/thankyou.php");
+    header("Location: /pages/admin/set_appointment.php");
 } 
 
 else{
