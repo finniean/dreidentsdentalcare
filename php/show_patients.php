@@ -31,8 +31,7 @@ $result=mysqli_query($link, $sql);
   				   <th>Last Name</th>
   				   <th>Email</th>
   				   <th>Mobile Number</th>
-  				   <th>Veiw</th>
-  				   <th>Edit</th>
+  				   <th>View</th>
 				  </tr>" ;
         while($row = mysqli_fetch_assoc($result)) { echo "
            <tr class='resultsrow'>
@@ -41,8 +40,6 @@ $result=mysqli_query($link, $sql);
               <td>" . $row["email"]. "</td>
 		          <td>" . $row["mobile_number"] . "</td>
 		          <td><a href='view_patient.php?uid=". $row['uid'] ."'>View</td>
-       		     <td><a href='edit_patient.php?uid=". $row['uid'] ."'>Edit</td>
-       		     <td><a href='delete.php?uid=". $row['uid'] ."'>Delete</td>
            </tr>"; } } 
         else { echo "<div class='alert alert-success' role='alert'><p>0 results</p></div>" ; } 
         ?>

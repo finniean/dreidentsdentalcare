@@ -1,69 +1,71 @@
-<?php require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php'); $title="Dreident Dental Care - " ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php');
+<?php require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php'); $title="Dreident Dental Care - " ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php');?>
 
-$uid = $_GET['uid'];
+<div class='pagebody clearfix'>
+   <div class='content-container'>
+      <div class='pageheader'>
+         <h1>Edit Account</h1>
+      </div>
+      <div class='pagecontent clearfix'>
+      	<form class='regform clearfix' id='insert_register' action='' method='post'>
+      	<?php
 
-$sql="SELECT * FROM patients
-WHERE uid='$uid'";
-$result=mysqli_query($link, $sql);
+		$uid = $_GET['uid'];
+
+		if(isset($_POST['update'])) {
+	         $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
+	         $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
+	         $email = mysqli_real_escape_string($link, $_REQUEST['email']);
+	         $birth_date = mysqli_real_escape_string($link, $_REQUEST['birth_date']);
+	         $home_address= mysqli_real_escape_string($link, $_REQUEST['home_address']);
+	         $phone_number= mysqli_real_escape_string($link, $_REQUEST['phone_number']);
+	         $mobile_number= mysqli_real_escape_string($link, $_REQUEST['mobile_number']);
+	         $occupation= mysqli_real_escape_string($link, $_REQUEST['occupation']);
+	         $business_phone= mysqli_real_escape_string($link, $_REQUEST['business_phone']);
+	         $spouse_name= mysqli_real_escape_string($link, $_REQUEST['spouse_name']);
+	         $spouse_phone= mysqli_real_escape_string($link, $_REQUEST['spouse_phone']);
+	         $medical_doctor= mysqli_real_escape_string($link, $_REQUEST['medical_doctor']);
+	         $last_visit= mysqli_real_escape_string($link, $_REQUEST['last_visit']);
+	         $dentist_visit= mysqli_real_escape_string($link, $_REQUEST['dentist_visit']);
+	         $referral= mysqli_real_escape_string($link, $_REQUEST['referral']);
+
+	         $update = "UPDATE `patients` SET `first_name` = '$first_name' , `last_name` = '$last_name' , `email` = '$email' , `birth_date` = '$birth_date' , `home_address` = '$home_address' , `phone_number` = '$phone_number' , `mobile_number` = '$mobile_number' , `occupation` = '$occupation' , `business_phone` = '$business_phone', `spouse_name` = '$spouse_name', `medical_doctor` = '$medical_doctor', `last_visit` = '$last_visit', `dentist_visit` = '$dentist_visit', `referral` = '$referral' WHERE `patients`.`uid` = '$uid' ;";
+
+	         if(mysqli_query($link, $update)){
+	            echo "<div class='alert alert-success'>
+	                 <strong>Success!</strong> You have updated the profile.
+	               </div>";
+         } 
+
+         else{
+             echo "ERROR: Could not able to execute $update. " . mysqli_error($link);
+         } }
+
+         if(isset($_POST['delete'])){
+
+			$delete = "DELETE FROM patients WHERE uid = '$uid'";
+
+			if(mysqli_query($link, $delete)){
+            echo "<div class='alert alert-success'>
+                 <strong>Success!</strong> You have deleted the profile.
+                 <a href='/pages/admin/patients.php'></a>
+               </div>";
+
+        } 
+
+         else{
+             echo "ERROR: Could not able to execute $delete. " . mysqli_error($link);
+         } }
 
 
-if (mysqli_num_rows($result)> 0) {
-	while($row = mysqli_fetch_array($result))
-        { 
-		echo "
-		<div class='pagebody clearfix'>
-		   <div class='content-container'>
-		      <div class='pageheader'>
-		         <h1>Edit Account</h1>
-		      </div>
-		      <div class='pagecontent clearfix'>
-		      ";
+		$sql="SELECT * FROM patients
+		WHERE uid='$uid'";
 
-		         if(isset($_POST['update'])){
-			         $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
-			         $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
-			         $email = mysqli_real_escape_string($link, $_REQUEST['email']);
-			         $password = mysqli_real_escape_string($link, $_REQUEST['password']);
-			         $birth_month = mysqli_real_escape_string($link, $_REQUEST['birth_month']);
-			         $birth_day = mysqli_real_escape_string($link, $_REQUEST['birth_day']);
-			         $birth_year = mysqli_real_escape_string($link, $_REQUEST['birth_year']);
-			         $birth_date =  $birth_month ."/". $birth_day ."/". $birth_year;
-			         $home_address= mysqli_real_escape_string($link, $_REQUEST['home_address']);
-			         $phone_number= mysqli_real_escape_string($link, $_REQUEST['phone_number']);
-			         $mobile_number= mysqli_real_escape_string($link, $_REQUEST['mobile_number']);
-			         $occupation= mysqli_real_escape_string($link, $_REQUEST['occupation']);
-			         $business_phone= mysqli_real_escape_string($link, $_REQUEST['business_phone']);
-			         $spouse_name= mysqli_real_escape_string($link, $_REQUEST['spouse_name']);
-			         $spouse_phone= mysqli_real_escape_string($link, $_REQUEST['spouse_phone']);
-			         $medical_doctor= mysqli_real_escape_string($link, $_REQUEST['medical_doctor']);
-			         $last_visit= mysqli_real_escape_string($link, $_REQUEST['last_visit']);
-			         $dentist_visit= mysqli_real_escape_string($link, $_REQUEST['dentist_visit']);
-			         $referral= mysqli_real_escape_string($link, $_REQUEST['referral']);
+		$result=mysqli_query($link, $sql);
 
-			         $sql = mysqli_query($link, "UPDATE `patients` SET `first_name` = '$first_name' , `last_name` = '$last_name' , `email` = '$email' , `birth_date` = '$birth_date' , `home_address` = '$home_address' , `phone_number` = '$phone_number' , `mobile_number` = '$mobile_number' , `occupation` = '$occupation' , `business_phone` = '$business_phone', `spouse_name` = '$spouse_name', `medical_doctor` = '$medical_doctor', `last_visit` = '$last_visit', `dentist_visit` = '$dentist_visit', `referral` = '$referral' WHERE `patients`.`uid` = '$uid' ;");
+		if (mysqli_num_rows($result)> 0) {
+			while($row = mysqli_fetch_array($result)) {
 
-		         if(mysqli_query($link, $sql)){
-		            echo "<div class='alert alert-success'>
-		                 <strong>Success!</strong> You have edited your profile.
-		               </div>";
-		         } 
-
-		         else{
-		             echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-		         }
-
-		         mysqli_close($link);
-		         
-		         };
-		         if(isset($_POST['delete'])){
-
-					$delete = mysqli_query($link, "DELETE FROM patients WHERE uid = '$uid'");
-
-					header("Location:/pages/admin/patients.php");
-
-				};
 		         echo "
-		         <form class='regform clearfix' id='insert_register' action='' method='post'>
 		            <div class='fullname clearfix'>
 		               <div class='form-group form-group-half'>
 		                  <label>First name</label>
@@ -156,17 +158,20 @@ if (mysqli_num_rows($result)> 0) {
 		                  <label>Referred to us by</label>
 		                  <input type='text ' class='form-control' style='width: 100%' value='" .$row['referral']. "' name='referral'>
 		               </div>
-		            </div>
-					<input type='submit' class='btn btn-cstm' id='update' value='Update' name='update'>
-					<input type='submit' class='btn btn-cstm' id='delete' value='Delete' name='delete'>
+		            </div>";
+
+		         } }
+		        else{};
+		        ?>
+
+		       	<input type='submit' class='btn btn-cstm' id='update' value='Update' name='update'>
+				<input type='submit' class='btn btn-cstm' id='delete' value='Delete' name='delete'>
+			</form>
+				<div>
 					<a href='/pages/admin/patients.php'><input type='submit' class='btn btn-cstm' value='Search Again'></a>
-		         </form>
-
-		      </div>
-		   </div>
+				</div>
 		</div>
-			";
-        }}
-        else{};
+	</div>
+</div>
 
-include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); mysqli_close($link); ?>
+<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); mysqli_close($link); ?>

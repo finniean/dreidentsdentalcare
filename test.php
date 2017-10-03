@@ -7,7 +7,13 @@
          <h1></h1>
       </div>
       <div class="pagecontent clearfix">
-    
+    	<?php
+
+    	$sql="SELECT * FROM appointments
+		WHERE uid='$uid'";
+
+
+    	?>
     
     
       </div>

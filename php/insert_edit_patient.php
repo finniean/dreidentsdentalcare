@@ -2,15 +2,13 @@
 
 require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
 
-$first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
-$last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
+         $sql = "UPDATE patients SET last_name='Doe' WHERE uid=30";
 
-$uid = $_GET['uid'];
-
-$sql = mysqli_query($link, "UPDATE `patients` SET `first_name` = '$first_name' , `last_name` = '$last_name' WHERE `worker`.`uid` = '$uid' ;");
-
-header("Location: /patients.php");
+if (mysqli_query($link, $sql)) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . mysqli_error($link);
+}
 
 mysqli_close($link);
-
-?>
+         ?>

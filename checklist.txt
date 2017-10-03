@@ -28,8 +28,9 @@ DONE *add "Search Again" button for queries
 DONE *ADMIN thank you after setting appointment
 DONE *thank you after setting appointment
 DONE *other searrch criteria for appointment
-*Fix view/edit delete
+DONE *Fix view/edit delete
 
+*fix view appointment
 *add required fields on FIrst and Last name check patients
 *email after reg and set appointment
 *Form validator
@@ -42,3 +43,4 @@ DONE *other searrch criteria for appointment
 *footer close links
 *fix classes
 *fix date picker
+*fix titles
