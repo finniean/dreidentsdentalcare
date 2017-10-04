@@ -29,16 +29,18 @@ DONE *ADMIN thank you after setting appointment
 DONE *thank you after setting appointment
 DONE *other searrch criteria for appointment
 DONE *Fix view/edit delete
+DONE *Notify patients if date/time selected is unavailable
 
-*fix view appointment
-*add required fields on FIrst and Last name check patients
-*email after reg and set appointment
 *Form validator
+*<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> on same page actions
+*add required fields on FIrst and Last name check patients
+
+*separate require DB
+*fix view appointment
+*email after reg and set appointment
 *Email a day before appointment day
 *User time out
-*PHP Self
 *fix design
-*disable time if already taken
 *fix header
 *footer close links
 *fix classes

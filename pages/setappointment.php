@@ -1,4 +1,68 @@
-<?php $title='Dreident Dental Care - Set Appointment' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php'); ?>
+<?php $title='Dreident Dental Care - Set Appointment' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php');
+
+require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
+
+$formsubmitErr = $appt_dateErr = $appt_timeErr = $servicesErr = '';
+$formsubmit = $appt_date = $appt_time = $services = '';
+
+   if ($_POST) {
+
+      $valid = true;
+
+      if (empty($_POST["appt_date"])) {
+         $valid = false;
+         $appt_dateErr = "Date is required";
+      } else {
+         $appt_date = mysqli_real_escape_string($link, $_REQUEST['appt_date']);
+      }
+
+      if (empty($_POST["appt_time"])) {
+         $valid = false;
+         $appt_timeErr = "Time is required";
+      } else {
+         $appt_time = mysqli_real_escape_string($link, $_REQUEST['appt_time']);
+      }
+
+      if (empty($_POST["services"])) {
+         $valid = false;
+         $servicesErr = "Service is required";
+      } else {
+         $services = mysqli_real_escape_string($link, $_REQUEST['services']);
+      }
+   
+   if ($valid){
+      if(isset($_POST['submit'])){
+         $validate="SELECT * FROM appointments WHERE appt_date = '$appt_date' AND appt_time = '$appt_time'";
+         $result=mysqli_query($link, $validate);
+
+         if (mysqli_num_rows($result)> 0) {
+            $formsubmitErr = "<div class='alert alert-danger'>
+                 Sorry! The Date or Time selected is not available. Please choose different Date or Time.
+               </div>";
+         }
+
+         else {
+         $sql = "INSERT INTO appointments
+         (appt_date, appt_time, service, first_name, last_name, email, mobile_number)
+         VALUES 
+         ('$appt_date', '$appt_time', '$services', '{$_SESSION['username']}', '{$_SESSION['last_name']}', '{$_SESSION['email']}', '{$_SESSION['mobile_number']}')";
+
+            if(mysqli_query($link, $sql)){
+               $formsubmit = "<div class='alert alert-success'>
+                     <strong>Success!</strong> Appointment has been scheduled.<br>
+                     <strong>Date:</strong> " .$appt_date. "<br>
+                     <strong>Time:</strong> " .$appt_time. "<br>
+                     <strong>For:</strong> " .$services. "
+                  </div>";
+            } 
+
+            else{
+               echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+            }
+         }
+      }
+   } 
+} ?>
 
 <!-- begin page content -->
 <div class='pagebody clearfix'>
@@ -7,40 +71,14 @@
          <h1>Set Appointment</h1>
       </div>
       <div class='pagecontent clearfix'>
-      <?php
-
-         require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
-
-      if(isset($_POST['submit'])){
-         $appt_date = mysqli_real_escape_string($link, $_REQUEST['appt_date']);
-         $appt_time = mysqli_real_escape_string($link, $_REQUEST['appt_time']);
-         $services = mysqli_real_escape_string($link, $_REQUEST['services']);
-
-         $sql = "INSERT INTO appointments
-         (appt_date, appt_time, service, first_name, last_name, email, mobile_number)
-         VALUES 
-         ('$appt_date', '$appt_time', '$services', '{$_SESSION['username']}', '{$_SESSION['last_name']}', '{$_SESSION['email']}', '{$_SESSION['mobile_number']}')";
-
-         if(mysqli_query($link, $sql)){
-             echo "<div class='alert alert-success'>
-                 <strong>Success!</strong> Appointment has been scheduled.<br>
-                 <strong>Date:</strong> " .$appt_date. "<br>
-                 <strong>Time:</strong> " .$appt_time. "<br>
-                 <strong>For:</strong> " .$services. "
-               </div>";
-         } 
-
-         else{
-             echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-         }
-
-         mysqli_close($link);
-      }
-
-      ?>
-         <form class='apptform clearfix' id='insert_appointment' action='' method='post'>
+         <?php 
+         echo $formsubmit;
+         echo $formsubmitErr;    
+         ?>
+         <form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method='post'>
             <div class='form-group'>
    				<label>Date</label>
+               <span class="error">* <?php echo $appt_dateErr;?></span>
                <input type='text' id='datepicker' class='form-control' name='appt_date'>
                <script>
                   $( function() {
@@ -50,6 +88,7 @@
             </div>
             <div class='form-group'>
                <label>Time</label>
+               <span class="error">* <?php echo $appt_timeErr;?></span>
                <select class='form-control' name='appt_time'>
                   <option selected disabled>Select Time</option>
                   <option>09:00AM - 11:00AM</option>
@@ -60,6 +99,7 @@
             </div>
             <div class='form-group'>
                <label>Service to be done</label>
+               <span class="error">* <?php echo $servicesErr;?></span>
                <select class='form-control' name='services'>
                   <option selected disabled>Services</option>
                   <option>Oral Prophylaxis</option>
@@ -84,4 +124,4 @@
 </div>
 <!-- end page content -->
 
-<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); ?>
+<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); mysqli_close($link);?>

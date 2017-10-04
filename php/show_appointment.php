@@ -1,22 +1,24 @@
-<?php require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php'); $title="Dreident Dental Care - " ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php');
+<?php $title="Appointments" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php');
 
-$start_date = mysqli_real_escape_string($link, $_REQUEST[ 'start_date']);
-$end_date = mysqli_real_escape_string($link, $_REQUEST[ 'end_date']);
-$appt_time = mysqli_real_escape_string($link, $_REQUEST[ 'appt_time']);
-$services = mysqli_real_escape_string($link, $_REQUEST[ 'services']);
-$first_name = mysqli_real_escape_string($link, $_REQUEST[ 'first_name']);
-$last_name = mysqli_real_escape_string($link, $_REQUEST[ 'last_name']);
+require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
+
+$start_date = $_SESSION['appt_start_date'];
+$end_date = $_SESSION['appt_end_date'];
+$appt_time = $_SESSION['appt_appt_time'];
+$services = $_SESSION['appt_services'];
+$first_name = $_SESSION['appt_first_name'];
+$last_name = $_SESSION['appt_last_name'];
 
 $sql="SELECT * FROM appointments
-WHERE (appt_date BETWEEN '$start_date' AND '$end_date')
-OR (appt_date = '$start_date' AND service = '$services')
-AND appt_date = '$start_date'
-AND appt_time = 'appt_time'
+WHERE (appt_date = '$start_date' AND service = '$services')
+OR (appt_date BETWEEN '$start_date' AND '$end_date')
+AND (appt_date = '$start_date' AND appt_time = 'appt_time')
 AND first_name LIKE '%" .$first_name. "%'
 AND last_name LIKE '%" .$last_name. "%'
 ORDER BY appt_date ASC;" ;
 
 $result=mysqli_query($link, $sql);
+
 ?>
 
 <!-- begin page content -->
@@ -50,7 +52,7 @@ $result=mysqli_query($link, $sql);
               <td>" . $row["email"] . "</td>
               <td>" . $row["mobile_number"] . "</td>
             </tr>"; } }
-          else { echo "<div class='alert alert-success' role='alert'><p>0 results</p></div>"; }
+          else { echo "<div class='alert alert-danger' role='alert'><p>0 results</p></div>"; }
           ?>
 
           </table>
@@ -61,4 +63,13 @@ $result=mysqli_query($link, $sql);
 </div>
 <!-- end page content -->
 
-<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); mysqli_close($link); ?>
+<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); 
+
+unset ($_SESSION['appt_start_date']);
+unset ($_SESSION['appt_end_date']);
+unset ($_SESSION['appt_appt_time']);
+unset ($_SESSION['appt_services']);
+unset ($_SESSION['appt_first_name']);
+unset ($_SESSION['appt_last_name']);
+
+mysqli_close($link); ?>

@@ -1,15 +1,17 @@
-<?php require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php'); $title="Dreident Dental Care - " ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php');
+<?php $title="Patients" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php');
 
-$first_name=mysqli_real_escape_string($link, $_REQUEST[ 'first_name']);
-$last_name=mysqli_real_escape_string($link, $_REQUEST[ 'last_name']);
-$email=mysqli_real_escape_string($link, $_REQUEST[ 'email']);
-$mobile_number=mysqli_real_escape_string($link, $_REQUEST[ 'mobile_number']);
+require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
+
+$first_name = $_SESSION['patient_first_name'];
+$last_name = $_SESSION['patient_last_name'];
+$email = $_SESSION['patient_email'];
+$mobile_number = $_SESSION['patient_mobile_number'];
 
 $sql = "SELECT * FROM patients
 WHERE (first_name LIKE '%" .$first_name. "%'
 OR last_name LIKE '%" .$last_name. "%')
-AND email LIKE '%" .$email. "%'
-AND mobile_number LIKE '%" .$mobile_number. "%'
+AND (email LIKE '%" .$email. "%')
+AND (mobile_number LIKE '%" .$mobile_number. "%')
 ORDER BY last_name ASC;" ;
 
 $result=mysqli_query($link, $sql);
@@ -41,7 +43,7 @@ $result=mysqli_query($link, $sql);
 		          <td>" . $row["mobile_number"] . "</td>
 		          <td><a href='view_patient.php?uid=". $row['uid'] ."'>View</td>
            </tr>"; } } 
-        else { echo "<div class='alert alert-success' role='alert'><p>0 results</p></div>" ; } 
+        else { echo "<div class='alert alert-danger' role='alert'><p>0 results</p></div>" ; } 
         ?>
 
           </table>
@@ -51,4 +53,11 @@ $result=mysqli_query($link, $sql);
 </div>
 <!-- end page content -->
 
-<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); mysqli_close($link); ?>
+<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); 
+
+unset ($_SESSION['patient_first_name']);
+unset ($_SESSION['patient_last_name']);
+unset ($_SESSION['patient_email']);
+unset ($_SESSION['patient_mobile_number']);
+
+mysqli_close($link); ?>

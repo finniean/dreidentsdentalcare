@@ -1,4 +1,4 @@
-<?php $title='Dreident Dental Care - Registration' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php'); ?>
+<?php $title='Patient Registration' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php'); ?>
 
 <!-- begin page content -->
 <div class='pagebody clearfix'>
