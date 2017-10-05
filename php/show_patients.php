@@ -41,13 +41,14 @@ $result=mysqli_query($link, $sql);
               <td>" . $row["last_name"]. "</td>
               <td>" . $row["email"]. "</td>
 		          <td>" . $row["mobile_number"] . "</td>
-		          <td><a href='view_patient.php?uid=". $row['uid'] ."'>View</td>
+		          <td><a href='view_patient.php?uid=". $row['uid'] ."'>View</a></td>
            </tr>"; } } 
         else { echo "<div class='alert alert-danger' role='alert'><p>0 results</p></div>" ; } 
         ?>
 
           </table>
-        <a href='/pages/admin/patients.php'><input type='submit' class='btn btn-cstm' value='Search Again'></a>
+          <div><a href='/pages/admin/patients.php'><input type='submit' class='btn btn-cstm search_again' value='Search Again'></a></div>
+        
       </div>
    </div>
 </div>

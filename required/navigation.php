@@ -23,7 +23,7 @@
                     <a href='/pages/location.php'>CLINIC</a>
                 </li>
                 <li>
-                    <a href='/pages/404.php'>SERVICES</a>
+                    <a href='/pages/services.php'>SERVICES</a>
                 </li>
                 </ul>
             </div>
@@ -45,7 +45,7 @@
                     <a href='/pages/location.php'>CLINICS</a>
                 </li>
                 <li>
-                    <a href='/pages/404.php'>SERVICES</a>
+                    <a href='/pages/services.php'>SERVICES</a>
                 </li>
                 </ul>
             </div>

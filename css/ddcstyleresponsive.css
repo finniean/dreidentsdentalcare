@@ -129,8 +129,11 @@ nav .navbar-collapsed{
 
 
 /* Registration */
-.regform {
-    margin-bottom: 0;
+form#login{
+    margin-bottom: 0 !important;
+}
+form {
+    margin-bottom: 30px;
 }
 .regform .form-group-half {
     width: 50%;
@@ -163,18 +166,11 @@ nav .navbar-collapsed{
     padding: 20px;
     margin-bottom: 20px;
 	border-radius: 8px;
-}
-.user-image{
-	margin-bottom: 20px;
-}
-.user-image img {
-    width: 150px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-	display: block;
-	border-radius: 50%;
-    overflow: hidden;
+    width: 23%;
+    background: #38cbf5;
+    margin-right: 2%;
+    float: left;
+    color: black;
 }
 .testi-heading{
     margin-top: 0 !important;
@@ -240,7 +236,8 @@ nav .navbar-collapsed{
 	margin-bottom: 10px;
 }
 .column1,
-.column2{
+.column2,
+.column3{
 	width: 30%;
 	float: left;
 	margin-right: 3%;
@@ -300,10 +297,10 @@ nav .navbar-collapsed{
     /* -------------------------------For desktop:------------------------------- */
 /* Header */
 .branding {
-    width: 40%;
+    /*width: 40%;*/
     float: left;
 }
-.notloggedin{
+.login_form{
     width: 50%;
     float: right;
 }
@@ -319,5 +316,46 @@ nav .navbar-collapsed{
 .dentistsprofile {
 	width: 33.33%;
     float: left;
+}
+/*FAST CODED*/
+.branding {
+    width: 30%;
+}
+.login .form-group {
+    width: 50%;
+    float: right;
+    clear: both;
+}
+.login .btn-login{
+    float: right;
+    clear: both;
+}
+.login-links{
+    float: right;
+}
+.login-links a{
+    float: left;
+}
+.loggedname{
+    float: right;
+    margin-right: 15px;
+}
+.show_patients,
+.show_appt{
+    width: 100%;
+}
+.show_patients th,
+.show_appt th  {
+    background-image: linear-gradient(to bottom,#38cbf5 0,#2c97b6 100%);
+    padding: 10px;
+}
+.show_patients .resultsrow td,
+.show_appt .resultsrow td {
+    padding: 10px;
+    border: 1px white solid;
+}
+.search_again{
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 }

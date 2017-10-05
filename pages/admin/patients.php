@@ -82,4 +82,4 @@ else {
 <!-- end page content -->
 
 
-<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); mysqli_close($link); ?>
+<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php');?>

@@ -107,9 +107,8 @@
             mysqli_close($link);
          }
       }?>
-
-         <h3 class='blueline'>Register a patient</h3>
-         <p class='reqfields'><span class = 'error'>*</span> required fields</p>
+        <h3 class='blueline'>Register a patient</h3>
+        <p class='reqfields'><span class = 'error'>*</span> required fields</p>
          <form class='regform clearfix' id='insert_register' action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method='post'>
             <div class='credentials clearfix'>
                <div class='form-group form-group-half'>

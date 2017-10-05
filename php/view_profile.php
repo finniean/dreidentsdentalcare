@@ -1,4 +1,4 @@
-<?php $title="View Profile" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php');?>
+<?php $title="View Profile" ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php');?>
 
 <div class='pagebody clearfix'>
    <div class='content-container'>
@@ -9,7 +9,7 @@
       	<form class='regform clearfix' id='insert_register' action='' method='post'>
       	<?php
 
-      	require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
+      	require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php'); 
 
 		$uid = $_GET['uid'];
 
@@ -41,23 +41,6 @@
          else{
              echo "ERROR: Could not able to execute $update. " . mysqli_error($link);
          } }
-
-         if(isset($_POST['delete'])){
-
-			$delete = "DELETE FROM patients WHERE uid = '$uid'";
-
-			if(mysqli_query($link, $delete)){
-            echo "<div class='alert alert-success'>
-                 <strong>Success!</strong> You have deleted the profile.
-                 <a href='/pages/admin/patients.php'></a>
-               </div>";
-
-        } 
-
-         else{
-             echo "ERROR: Could not able to execute $delete. " . mysqli_error($link);
-         } }
-
 
 		$sql="SELECT * FROM patients
 		WHERE uid='$uid'";
@@ -166,11 +149,7 @@
 		        ?>
 
 		       	<input type='submit' class='btn btn-cstm' id='update' value='Update' name='update'>
-				<input type='submit' class='btn btn-cstm' id='delete' value='Delete' name='delete'>
 			</form>
-				<div>
-					<a href='/pages/admin/patients.php'><input type='submit' class='btn btn-cstm search_again' value='Search Again'></a>
-				</div>
 		</div>
 	</div>
 </div>

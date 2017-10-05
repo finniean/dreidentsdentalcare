@@ -10,9 +10,9 @@ $first_name = $_SESSION['appt_first_name'];
 $last_name = $_SESSION['appt_last_name'];
 
 $sql="SELECT * FROM appointments
-WHERE (appt_date = '$start_date' AND service = '$services')
-OR (appt_date BETWEEN '$start_date' AND '$end_date')
-AND (appt_date = '$start_date' AND appt_time = 'appt_time')
+WHERE appt_date = '$start_date' AND service = '$services'
+OR '$end_date'
+OR '$services'
 AND first_name LIKE '%" .$first_name. "%'
 AND last_name LIKE '%" .$last_name. "%'
 ORDER BY appt_date ASC;" ;
@@ -28,7 +28,7 @@ $result=mysqli_query($link, $sql);
          <h1>Check Appointments</h1>
       </div>
       <div class="pagecontent clearfix">
-        <div class="search_results">
+        <div class="show_appt">
           <table>
 
           <?php
@@ -56,7 +56,7 @@ $result=mysqli_query($link, $sql);
           ?>
 
           </table>
-          <a href='/pages/admin/check_appointment.php'><input type='submit' class='btn btn-cstm' value='Search Again'></a>
+          <a href='/pages/admin/check_appointment.php'><input type='submit' class='btn btn-cstm search_again' value='Search Again'></a>
          </div>
       </div>
    </div>

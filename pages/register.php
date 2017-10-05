@@ -1,4 +1,4 @@
-<?php $title='Dreident Dental Care - Registration' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php'); ?>
+<?php $title='Registration' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php'); ?>
 
 <!-- begin page content -->
 <div class='pagebody clearfix'>
@@ -107,11 +107,10 @@
             mysqli_close($link);
          }
       }?>
-
-         <h3 class='blueline'>Dont have an account with us yet?</h3>
-         <p>We appreciate the confidence you place with us to you with the dental service. To assist us us in serving you better, kindly fill up this form.</p>
-         <p class='reqfields'><span class = 'error'>*</span> required fields</p>
-         <form class='regform clearfix' id='insert_register' action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method='post'>
+        <h3 class='blueline'>Dont have an account with us yet?</h3>
+        <p>We appreciate the confidence you place with us to you with the dental service. To assist us us in serving you better, kindly fill up this form.</p>
+        <p class='reqfields'><span class = 'error'>*</span> required fields</p>
+         <form class='regform clearfix' action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method='post'>
             <div class='credentials clearfix'>
                <div class='form-group form-group-half'>
                   <label>Email address</label>

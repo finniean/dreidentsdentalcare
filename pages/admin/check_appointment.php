@@ -33,7 +33,7 @@ $form = "
       <div class='form-group'>
       <label>Start Date</label>
       <span class='error'>* " . $start_dateErr . "</span>
-          <input type='text' class='form-control' id='start_date' name='start_date'>
+          <input type='text' class='form-control' id='start_date' name='start_date' placeholder='MM/DD/YYYY'>
           <script>
               $(function() {
                   $('#start_date').datepicker();
@@ -42,7 +42,7 @@ $form = "
       </div>
       <div class='form-group'>
           <label>End Date</label>
-          <input type='text' class='form-control' id='end_date' name='end_date'>
+          <input type='text' class='form-control' id='end_date' name='end_date' placeholder='MM/DD/YYYY'>
           <script>
               $(function() {
                   $('#end_date').datepicker();

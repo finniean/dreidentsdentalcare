@@ -30,19 +30,23 @@ DONE *thank you after setting appointment
 DONE *other searrch criteria for appointment
 DONE *Fix view/edit delete
 DONE *Notify patients if date/time selected is unavailable
+DONE *Form validator header
+DONE *add placeholder for dates
+DONE *fix titles
+DONE *error box on fields empty
+DONE *separate require DB
+DONE *footer close links
+*fix date picker design
 
-FOCUS
-*Form validator header
 REMAINING
-*add placeholder for dates
-*birth day on reg 100 when on phone
-*separate require DB
+
+
+*birth day on reg 100% when on phone
+*fix design
+*fix header design
+*fix classes
+
 *email after reg and set appointment
 *Email a day before appointment day
-*fix design
-*fix header
-*footer close links
-*fix classes
-*fix date picker
-*fix titles
 *user feedback box
+*Documentation

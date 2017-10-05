@@ -2,7 +2,7 @@
 
 require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
 
-$formsubmitErr = $appt_dateErr = $appt_timeErr = $servicesErr = $first_nameErr = $last_nameErr = $emailErr = $mobile_numberErr = '';
+$emptyErr = $formsubmitErr = $appt_dateErr = $appt_timeErr = $servicesErr = $first_nameErr = $last_nameErr = $emailErr = $mobile_numberErr = '';
 $formsubmit = $appt_date = $appt_time = $services = $first_name = $last_name = $email = $mobile_number = '';
 
 if ($_POST) {
@@ -83,7 +83,13 @@ if ($_POST) {
             }
          }  
       }  
-   }  
+   }
+   else {
+      $emptyErr =  "<div class='alert alert-danger'>
+              <strong>Sorry!</strong> Please fill the required fields.
+            </div>";
+   }
+   mysqli_close($link); 
 } ?>
 
 <!-- begin page content -->
@@ -93,7 +99,8 @@ if ($_POST) {
          <h1>Set Appointment</h1>
       </div>
       <div class='pagecontent clearfix'>
-         <?php 
+         <?php
+         echo $emptyErr;
          echo $formsubmit;
          echo $formsubmitErr;    
          ?>
@@ -101,10 +108,10 @@ if ($_POST) {
             <div class='form-group'>
                <label>Date</label>
                <span class="error">* <?php echo $appt_dateErr;?></span>
-                 <input type='text' class='form-control' id='appt_date' name='appt_date'>
+                 <input type='text' class='form-control' id='appt_date' name='appt_date' placeholder='MM/DD/YYYY'>
                  <script>
                      $(function() {
-                         $('#appt_date').datepicker();
+                         $('#appt_date').datepicker({ minDate: 0});
                      });
                  </script>
              </div>
@@ -172,4 +179,4 @@ if ($_POST) {
 </div>
 <!-- end page content -->
 
-<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); mysqli_close($link); ?>
+<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php');?>

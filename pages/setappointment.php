@@ -1,8 +1,8 @@
-<?php $title='Dreident Dental Care - Set Appointment' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php');
+<?php $title='Set Appointment' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php');
 
 require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
 
-$formsubmitErr = $appt_dateErr = $appt_timeErr = $servicesErr = '';
+$emptyErr =  $formsubmitErr = $appt_dateErr = $appt_timeErr = $servicesErr = '';
 $formsubmit = $appt_date = $appt_time = $services = '';
 
    if ($_POST) {
@@ -47,6 +47,8 @@ $formsubmit = $appt_date = $appt_time = $services = '';
          VALUES 
          ('$appt_date', '$appt_time', '$services', '{$_SESSION['username']}', '{$_SESSION['last_name']}', '{$_SESSION['email']}', '{$_SESSION['mobile_number']}')";
 
+         mail('janrhbautista@gmail.com', 'My Subject', 'My Message', 'My Footer');
+
             if(mysqli_query($link, $sql)){
                $formsubmit = "<div class='alert alert-success'>
                      <strong>Success!</strong> Appointment has been scheduled.<br>
@@ -60,8 +62,14 @@ $formsubmit = $appt_date = $appt_time = $services = '';
                echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
             }
          }
-      }
-   } 
+      }   
+   }
+   else {
+      $emptyErr =  "<div class='alert alert-danger'>
+              <strong>Sorry!</strong> Please fill the required fields.
+            </div>";
+   }
+   mysqli_close($link); 
 } ?>
 
 <!-- begin page content -->
@@ -71,7 +79,8 @@ $formsubmit = $appt_date = $appt_time = $services = '';
          <h1>Set Appointment</h1>
       </div>
       <div class='pagecontent clearfix'>
-         <?php 
+         <?php
+         echo $emptyErr;
          echo $formsubmit;
          echo $formsubmitErr;    
          ?>
@@ -124,4 +133,4 @@ $formsubmit = $appt_date = $appt_time = $services = '';
 </div>
 <!-- end page content -->
 
-<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php'); mysqli_close($link);?>
+<?php include($_SERVER[ 'DOCUMENT_ROOT']. '/required/footer.php');?>

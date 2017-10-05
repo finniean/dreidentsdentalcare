@@ -1,4 +1,4 @@
-<?php $title='Dreident Dental Care - Thank You' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php'); ?>
+<?php $title='Thank You' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php'); ?>
 
 <!-- begin page content -->
 <div class='pagebody clearfix'>
