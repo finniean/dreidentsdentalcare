@@ -136,11 +136,8 @@ nav .navbar-collapsed{
     width: 50%;
     padding-right: 10px;
 }
-.regform label{
-	width: 100%;
-}
 .regform .birthdate select {
-    margin-right: 10px;
+    width: 30%;
 }
 .regform .inputmodified{
 	width: 100%;

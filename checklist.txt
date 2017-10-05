@@ -31,18 +31,18 @@ DONE *other searrch criteria for appointment
 DONE *Fix view/edit delete
 DONE *Notify patients if date/time selected is unavailable
 
-*Form validator
-*<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> on same page actions
-*add required fields on FIrst and Last name check patients
-
+FOCUS
+*Form validator header
+REMAINING
+*add placeholder for dates
+*birth day on reg 100 when on phone
 *separate require DB
-*fix view appointment
 *email after reg and set appointment
 *Email a day before appointment day
-*User time out
 *fix design
 *fix header
 *footer close links
 *fix classes
 *fix date picker
 *fix titles
+*user feedback box
