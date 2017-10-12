@@ -58,7 +58,8 @@ if (isset($_SESSION["username"])) {
             </div>
             <div class='login-links clearfix'>
                 <a href='/php/view_profile.php?uid=". $_SESSION['uid'] ."'>View Profile</a>
-                <a href='/pages/setappointment.php'><p>Set Appointment</p></a> 
+                <a href='/pages/set_appointment.php'><p>Set Appointment</p></a>
+                <a href='/php/view_appointments.php'><p>My Appointments</p></a>
                 <a href='/php/logout.php'><p>Logout</p></a>
             </div" ;
     }

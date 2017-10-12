@@ -3,7 +3,7 @@
 
 $successful = $feedback_name = $feedback_subject = $feedback = '';
 
-if(isset($_POST['submit'])){
+if(isset($_POST['feedback'])){
     if ($_POST) {
         $feedback_name = mysqli_real_escape_string($link, $_REQUEST['feedback_name']);
         $feedback_subject = mysqli_real_escape_string($link, $_REQUEST['feedback_subject']);
@@ -24,10 +24,8 @@ if(isset($_POST['submit'])){
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
         }
     }
-}
-mysqli_close($link);
-
-?>
+    mysqli_close($link);
+}?>
    <div class="footer">
     <div class="content-container clearfix">
         <div class="column1">
@@ -62,20 +60,27 @@ mysqli_close($link);
                 </ul>
         </div>
         <div class="column3">
-            <?php echo $successful; ?> 
-            <h4>Send Us A Feedback</h4>
-            <form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method='post'>
-            <div class='form-group'>
-                <input type='text' class='form-control' name='feedback_name' placeholder='Your Name'>
-            </div>
-            <div class='form-group'>
-                <input type='text' class='form-control' name='feedback_subject' placeholder='Subject'>
-            </div>
-            <div class='form-group'>
-                <textarea class='form-control' rows="4" cols="50" name="feedback" placeholder='Your Feedback'></textarea>
-            </div>
-            <input type='submit' class='btn btn-cstm' value='Submit' name='submit'>
-         </form>
+
+            <?php 
+            if (isset($_SESSION["username"])) {
+                if($_SESSION['uid'] > '1'){
+            echo $successful;
+            echo "
+                <h4>Send Us A Feedback</h4>
+                <form action='". htmlspecialchars($_SERVER["PHP_SELF"]) ."' method='post'>
+                <div class='form-group'>
+                    <input type='text' class='form-control' name='feedback_name' placeholder='Your Name'>
+                </div>
+                <div class='form-group'>
+                    <input type='text' class='form-control' name='feedback_subject' placeholder='Subject'>
+                </div>
+                <div class='form-group'>
+                    <textarea class='form-control' rows='4' cols='50' name='feedback' placeholder='Your Feedback'></textarea>
+                </div>
+                <input type='submit' class='btn btn-cstm' value='Submit' name='feedback'>
+             </form>";
+         }}
+            ?>
         </div>
     </div>
 	</div>

@@ -56,7 +56,7 @@ $result=mysqli_query($link, $sql);
           ?>
 
           </table>
-          <a href='/pages/admin/check_appointment.php'><input type='submit' class='btn btn-cstm search_again' value='Search Again'></a>
+          <a href='/pages/admin/check_appointments.php'><input type='submit' class='btn btn-cstm search_again' value='Search Again'></a>
          </div>
       </div>
    </div>

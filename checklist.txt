@@ -36,16 +36,20 @@ DONE *fix titles
 DONE *error box on fields empty
 DONE *separate require DB
 DONE *footer close links
-*fix date picker design
+DONE *fix date picker design
+DONE *add form authentication
 
 REMAINING
 
-
+*form validation for updates
+*change button for form search
+*suggest available time for selected date if not available
+*send email to admin if change of appt
 *birth day on reg 100% when on phone
 *fix design
 *fix header design
 *fix classes
-
+*close links
 *email after reg and set appointment
 *Email a day before appointment day
 *user feedback box

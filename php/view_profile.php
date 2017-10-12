@@ -6,68 +6,113 @@
          <h1>Edit Account</h1>
       </div>
       <div class='pagecontent clearfix'>
-      	<form class='regform clearfix' id='insert_register' action='' method='post'>
       	<?php
 
       	require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php'); 
 
 		$uid = $_GET['uid'];
 
+        $emailErr = $first_nameErr = $last_nameErr = $birth_dateErr = '';
+
 		if(isset($_POST['update'])) {
-	         $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
-	         $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
-	         $email = mysqli_real_escape_string($link, $_REQUEST['email']);
-	         $birth_date = mysqli_real_escape_string($link, $_REQUEST['birth_date']);
-	         $home_address= mysqli_real_escape_string($link, $_REQUEST['home_address']);
-	         $phone_number= mysqli_real_escape_string($link, $_REQUEST['phone_number']);
-	         $mobile_number= mysqli_real_escape_string($link, $_REQUEST['mobile_number']);
-	         $occupation= mysqli_real_escape_string($link, $_REQUEST['occupation']);
-	         $business_phone= mysqli_real_escape_string($link, $_REQUEST['business_phone']);
-	         $spouse_name= mysqli_real_escape_string($link, $_REQUEST['spouse_name']);
-	         $spouse_phone= mysqli_real_escape_string($link, $_REQUEST['spouse_phone']);
-	         $medical_doctor= mysqli_real_escape_string($link, $_REQUEST['medical_doctor']);
-	         $last_visit= mysqli_real_escape_string($link, $_REQUEST['last_visit']);
-	         $dentist_visit= mysqli_real_escape_string($link, $_REQUEST['dentist_visit']);
-	         $referral= mysqli_real_escape_string($link, $_REQUEST['referral']);
+			if ($_POST) {
 
-	         $update = "UPDATE `patients` SET `first_name` = '$first_name' , `last_name` = '$last_name' , `email` = '$email' , `birth_date` = '$birth_date' , `home_address` = '$home_address' , `phone_number` = '$phone_number' , `mobile_number` = '$mobile_number' , `occupation` = '$occupation' , `business_phone` = '$business_phone', `spouse_name` = '$spouse_name', `medical_doctor` = '$medical_doctor', `last_visit` = '$last_visit', `dentist_visit` = '$dentist_visit', `referral` = '$referral' WHERE `patients`.`uid` = '$uid' ;";
+             $valid = true;
 
-	         if(mysqli_query($link, $update)){
-	            echo "<div class='alert alert-success'>
-	                 <strong>Success!</strong> You have updated the profile.
-	               </div>";
-         } 
+	             if (empty($_POST["email"])) {
+	               $valid = false;
+	               $emailErr = "Email is required";
+	             } else {
+	               $email = mysqli_real_escape_string($link, $_REQUEST['email']);
+	             }
 
-         else{
-             echo "ERROR: Could not able to execute $update. " . mysqli_error($link);
-         } }
 
-		$sql="SELECT * FROM patients
-		WHERE uid='$uid'";
+	             if (empty($_POST["first_name"])) {
+	               $valid = false;
+	               $first_nameErr = "First Name is required";
+	             } else {
+	               $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
+	             }
 
-		$result=mysqli_query($link, $sql);
+	             if (empty($_POST["last_name"])) {
+	               $valid = false;
+	               $last_nameErr = "Last Name is required";
+	             } else {
+	               $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
+	             }
+
+	             if (empty($_POST["birth_date"])) {
+	               $valid = false;
+	               $birth_dateErr = "Birth Day is required";
+	             } else {
+	               $birth_date = mysqli_real_escape_string($link, $_REQUEST['birth_date']);
+	             }
+		         
+		         if ($valid){
+		         $home_address= mysqli_real_escape_string($link, $_REQUEST['home_address']);
+		         $phone_number= mysqli_real_escape_string($link, $_REQUEST['phone_number']);
+		         $mobile_number= mysqli_real_escape_string($link, $_REQUEST['mobile_number']);
+		         $occupation= mysqli_real_escape_string($link, $_REQUEST['occupation']);
+		         $business_phone= mysqli_real_escape_string($link, $_REQUEST['business_phone']);
+		         $spouse_name= mysqli_real_escape_string($link, $_REQUEST['spouse_name']);
+		         $spouse_phone= mysqli_real_escape_string($link, $_REQUEST['spouse_phone']);
+		         $medical_doctor= mysqli_real_escape_string($link, $_REQUEST['medical_doctor']);
+		         $last_visit= mysqli_real_escape_string($link, $_REQUEST['last_visit']);
+		         $dentist_visit= mysqli_real_escape_string($link, $_REQUEST['dentist_visit']);
+		         $referral= mysqli_real_escape_string($link, $_REQUEST['referral']);
+
+		         $update = "UPDATE `patients` SET `first_name` = '$first_name' , `last_name` = '$last_name' , `email` = '$email' , `birth_date` = '$birth_date' , `home_address` = '$home_address' , `phone_number` = '$phone_number' , `mobile_number` = '$mobile_number' , `occupation` = '$occupation' , `business_phone` = '$business_phone', `spouse_name` = '$spouse_name', `medical_doctor` = '$medical_doctor', `last_visit` = '$last_visit', `dentist_visit` = '$dentist_visit', `referral` = '$referral' WHERE `patients`.`uid` = '$uid' ;";
+
+			         if(mysqli_query($link, $update)){
+			            echo "<div class='alert alert-success'>
+			                 <strong>Success!</strong> You have updated the profile.
+			               </div>";
+         			} 
+
+			         else{
+			             echo "ERROR: Could not able to execute $update. " . mysqli_error($link);
+			         }
+         		}
+		         else {
+		               echo "<div class='alert alert-danger'>
+		                       <strong>Sorry!</strong> Please fill the required fields.
+		                     </div>";
+		         }
+          	} 
+      	}
+        if (isset($_SESSION["username"])) {
+    		if($_SESSION['uid'] === $uid){
+				$sql="SELECT * FROM patients
+				WHERE uid='$uid'";
+
+				$result=mysqli_query($link, $sql);
 
 		if (mysqli_num_rows($result)> 0) {
 			while($row = mysqli_fetch_array($result)) {
 
 		         echo "
+		         <form class='regform clearfix' id='insert_register' action='' method='post'>
 		            <div class='fullname clearfix'>
 		               <div class='form-group form-group-half'>
 		                  <label>First name</label>
+		                  <span class='error'>* " .$first_nameErr. "</span>
 		                  <input type='text' class='form-control inputmodified' value='" .$row['first_name']. "' name='first_name'>
 		               </div>
 		               <div class='form-group form-group-half'>
 		                  <label for='lastname'>Last name</label>
+		                  <span class='error'>* " .$last_nameErr. "</span>
 		                  <input type='text' class='form-control inputmodified' value='" .$row['last_name']. "' name='last_name'>
 		               </div>
 		            </div>
 		            <div class='birthdate clearfix'>
 		               <div class='form-group  form-group-half'>
 		                  <label>Email address</label>
+		                  <span class='error'>* " .$emailErr. "</span>
 		                  <input type='email' class='form-control inputmodified' value='" .$row['email']. "' name='email'>
 		               </div>
 		               <div class='form-group form-group-half'>
 		                  <label>Birth Day</label>
+		                  <span class='error'>* " .$birth_dateErr. "</span>
 		                  <input type='text' id='birth_date' class='form-control inputmodified' value='" .$row['birth_date']. "' name='birth_date'>
 		                  <script>
 		                     $( function() {
@@ -142,14 +187,20 @@
 		                  <label>Referred to us by</label>
 		                  <input type='text ' class='form-control   inputmodified' value='" .$row['referral']. "' name='referral'>
 		               </div>
-		            </div>";
+		            </div>
+		            <input type='submit' class='btn btn-cstm' id='update' value='Update' name='update'>
+				</form>";
 
 		         } }
-		        else{};
+		        else{} } }
+		    else {
+		            echo "
+		            <div class='alert alert-danger'>
+		              <strong>Sorry!</strong> Please login to view this page.
+		            </div>";
+		         } ;
 		        ?>
 
-		       	<input type='submit' class='btn btn-cstm' id='update' value='Update' name='update'>
-			</form>
 		</div>
 	</div>
 </div>

@@ -43,11 +43,11 @@ $formsubmit = $appt_date = $appt_time = $services = '';
 
          else {
          $sql = "INSERT INTO appointments
-         (appt_date, appt_time, service, first_name, last_name, email, mobile_number)
+         (appt_date, appt_time, service, uid, first_name, last_name, email, mobile_number)
          VALUES 
-         ('$appt_date', '$appt_time', '$services', '{$_SESSION['username']}', '{$_SESSION['last_name']}', '{$_SESSION['email']}', '{$_SESSION['mobile_number']}')";
+         ('$appt_date', '$appt_time', '$services', '{$_SESSION['uid']}', '{$_SESSION['username']}', '{$_SESSION['last_name']}', '{$_SESSION['email']}', '{$_SESSION['mobile_number']}')";
 
-         mail('janrhbautista@gmail.com', 'My Subject', 'My Message', 'My Footer');
+         // mail('janrhbautista@gmail.com', 'My Subject', 'My Message', 'My Footer');
 
             if(mysqli_query($link, $sql)){
                $formsubmit = "<div class='alert alert-success'>
@@ -70,8 +70,7 @@ $formsubmit = $appt_date = $appt_time = $services = '';
             </div>";
    }
    mysqli_close($link); 
-} ?>
-
+} ?>  
 <!-- begin page content -->
 <div class='pagebody clearfix'>
    <div class='content-container'>
@@ -80,14 +79,16 @@ $formsubmit = $appt_date = $appt_time = $services = '';
       </div>
       <div class='pagecontent clearfix'>
          <?php
+         if (isset($_SESSION["username"])) {
+         if($_SESSION['uid'] > '1'){
          echo $emptyErr;
          echo $formsubmit;
          echo $formsubmitErr;    
-         ?>
-         <form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method='post'>
+         echo "
+         <form action='". htmlspecialchars($_SERVER["PHP_SELF"]) ."' method='post'>
             <div class='form-group'>
    				<label>Date</label>
-               <span class="error">* <?php echo $appt_dateErr;?></span>
+               <span class='error'>* <?php echo $appt_dateErr;?></span>
                <input type='text' id='datepicker' class='form-control' name='appt_date'>
                <script>
                   $( function() {
@@ -97,7 +98,7 @@ $formsubmit = $appt_date = $appt_time = $services = '';
             </div>
             <div class='form-group'>
                <label>Time</label>
-               <span class="error">* <?php echo $appt_timeErr;?></span>
+               <span class='error'>* <?php echo $appt_timeErr;?></span>
                <select class='form-control' name='appt_time'>
                   <option selected disabled>Select Time</option>
                   <option>09:00AM - 11:00AM</option>
@@ -108,7 +109,7 @@ $formsubmit = $appt_date = $appt_time = $services = '';
             </div>
             <div class='form-group'>
                <label>Service to be done</label>
-               <span class="error">* <?php echo $servicesErr;?></span>
+               <span class='error'>* <?php echo $servicesErr;?></span>
                <select class='form-control' name='services'>
                   <option selected disabled>Services</option>
                   <option>Oral Prophylaxis</option>
@@ -123,11 +124,16 @@ $formsubmit = $appt_date = $appt_time = $services = '';
                   <option>Orthodontic Treatment</option>
                   <option>Periapical Dental X-ray</option>
 				      <option>Root Canal</option>
-                  @endfor
                </select>
             </div>
             <input type='submit' class='btn btn-cstm' value='Set Appointment' name='submit'>
-         </form>
+         </form>"; }}
+         else {
+            echo "
+            <div class='alert alert-danger'>
+              <strong>Sorry!</strong> Please login to view this page.
+            </div>";
+         } ?>
       </div>
    </div>
 </div>

@@ -14,7 +14,10 @@
                     <a href='/pages/admin/patients.php'>PATIENTS</a>
                 </li>
                 <li>
-                    <a href='/pages/admin/check_appointment.php'>APPOINTMENTS</a>
+                    <a href='/pages/admin/current_appointments.php'>CURRENT APPOINTMENTS</a>
+                </li>
+                <li>
+                    <a href='/pages/admin/check_appointments.php'>SEARCH APPOINTMENTS</a>
                 </li>
                 <li>
                     <a href='/pages/admin/set_appointment.php'>SET APPOINTMENTS</a>
@@ -33,7 +36,10 @@
                     <a href='/pages/admin/patients.php'>PATIENTS</a>
                 </li>
                 <li>
-                    <a href='/pages/admin/check_appointment.php'>APPOINTMENTS</a>
+                    <a href='/pages/admin/current_appointments.php'>CURRENT APPOINTMENTS</a>
+                </li>
+                <li>
+                    <a href='/pages/admin/check_appointments.php'>SEARCH APPOINTMENTS</a>
                 </li>
                 <li>
                     <a href='/pages/admin/set_appointment.php'>SET APPOINTMENTS</a>
