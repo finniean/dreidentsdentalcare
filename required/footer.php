@@ -5,10 +5,9 @@ $successful = $feedback_name = $feedback_subject = $feedback = '';
 
 if(isset($_POST['feedback'])){
     if ($_POST) {
-        $feedback_name = mysqli_real_escape_string($link, $_REQUEST['feedback_name']);
+        $feedback_name = $_SESSION['username'] ." ". $_SESSION['last_name'];
         $feedback_subject = mysqli_real_escape_string($link, $_REQUEST['feedback_subject']);
         $feedback = mysqli_real_escape_string($link, $_REQUEST['feedback']);
-
         $sql = "INSERT INTO feedback
         (feedback_name, feedback_subject, feedback)
         VALUES 
@@ -68,9 +67,6 @@ if(isset($_POST['feedback'])){
             echo "
                 <h4>Send Us A Feedback</h4>
                 <form action='". htmlspecialchars($_SERVER["PHP_SELF"]) ."' method='post'>
-                <div class='form-group'>
-                    <input type='text' class='form-control' name='feedback_name' placeholder='Your Name'>
-                </div>
                 <div class='form-group'>
                     <input type='text' class='form-control' name='feedback_subject' placeholder='Subject'>
                 </div>

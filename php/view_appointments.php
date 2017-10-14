@@ -1,8 +1,8 @@
-<?php $title='Check Appointments' ; ob_start(); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php');
+<?php $title='Check Appointments' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php');
 
 require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
 
-$deletemsg = '';
+$deletemsg = $updatebtn = '';
 
 if($_SESSION['uid'] > '1'){
 
@@ -10,12 +10,11 @@ if($_SESSION['uid'] > '1'){
 
   $sql="SELECT * FROM appointments
   WHERE uid = '{$_SESSION['uid']}'
-  ORDER BY appt_time DESC;" ;
+  ORDER BY appt_date ASC;" ;
 
   $result=mysqli_query($link, $sql);
 
- 
-
+  
 }
 
 ?>
@@ -38,17 +37,24 @@ if($_SESSION['uid'] > '1'){
             <th>Time</th>
             <th>Service</th>
             <th></th>
-            <th></th>
           </tr>";
         while($row = mysqli_fetch_assoc($result)) {
           $aid = $row['aid'];
+          $status = $row['status'];
+          if ($status != 'Done'){
+            $updatebtn = "<a href='/php/update_appointment.php?aid=". $row['aid'] ."'>Update</a>";
+          }
+          else {
+            $updatebtn ="Done!";
+          }
           echo "
           <tr class='resultsrow'>
             <td>" . $row["appt_date"] . "</td>
             <td>" . $row["appt_time"] . "</td>
             <td>" . $row["service"] . "</td>
-            <td><a href='/php/update_appointment.php?aid=". $row['aid'] ."'>Update</a></td>
-          </tr>"; } }
+            <td>" . $updatebtn . "</td>
+            </tr>
+            "; } }
         else { echo "<div class='alert alert-danger' role='alert'><p>You have no appointments</p></div>"; }
         ?>
 

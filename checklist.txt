@@ -41,7 +41,10 @@ DONE *add form authentication
 
 REMAINING
 
-*form validation for updates
+*form login validation for updates
+*inspect content_container header
+*view profile
+
 *change button for form search
 *suggest available time for selected date if not available
 *send email to admin if change of appt

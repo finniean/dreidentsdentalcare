@@ -304,6 +304,10 @@ form {
     width: 50%;
     float: right;
 }
+header .error{
+    float: right !important;
+    padding-right: 10px !important;
+}
 .login .form-group {
     width: 40%;
     float: left;
@@ -355,7 +359,6 @@ form {
     border: 1px white solid;
 }
 .search_again{
-    margin-top: 20px;
     margin-bottom: 30px;
 }
 }

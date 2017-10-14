@@ -61,7 +61,9 @@ if (isset($_SESSION["username"])) {
                 <a href='/pages/set_appointment.php'><p>Set Appointment</p></a>
                 <a href='/php/view_appointments.php'><p>My Appointments</p></a>
                 <a href='/php/logout.php'><p>Logout</p></a>
-            </div" ;
+            </div
+        </div>
+    </div>" ;
     }
 }
 else {
