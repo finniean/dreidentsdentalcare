@@ -11,11 +11,11 @@
          <?php
             require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
 
-            $emptyErr =  $formsubmitErr = $appt_dateErr = $appt_timeErr = $servicesErr = '';
-            $selected1 = $selected2 = $selected3 = $selected4 = $selected5 = $selected6 = $selected7 = $selected8 = $selected9 = $selected10 = $selected11 = $selected12 = $selected13 = $selected14 = $selected15 = $selected16 = 
-            $loggedin = $notloggedin = $formsubmit = $appt_date = $appt_time = $services = '';
+            $appt_dateErr = $appt_timeErr = $servicesErr = '';
+            $selected1 = $selected2 = $selected3 = $selected4 = $selected5 = $selected6 = $selected7 = $selected8 = $selected9 = $selected10 = $selected11 = $selected12 = $selected13 = $selected14 = $selected15 = $selected16 = $appt_date = $appt_time = $services = '';
 
             $aid = $_GET['aid'];
+            $uid = $_SESSION['uid'];
 
             if(isset($_POST['update'])){
 
@@ -95,9 +95,9 @@
                }
             }
             if (isset($_SESSION["username"])) {
-               if($_SESSION['uid'] > '1'){ 
+               if($_SESSION['uid'] > '1'){
 
-                  $sql="SELECT * FROM appointments WHERE aid='$aid'";
+                  $sql="SELECT * FROM appointments WHERE aid='$aid' and uid = '$uid'";
 
                   $result=mysqli_query($link, $sql);
 
@@ -166,12 +166,12 @@
                         ";
                      }
                   }
+                  else {
+                     ob_end_flush(header('Location: /php/require_login.php'));
+                  }
                }
                else {
-                  echo "
-                     <div class='alert alert-danger'>
-                  <strong>Sorry!</strong> Please login to view this page.
-                 </div>";
+                  ob_end_flush(header('Location: /php/require_login.php'));
                }
             }
             else {

@@ -38,58 +38,7 @@ require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
 session_start();
 
 $invalidErr = '';
-$loggedin = $notloggedin = '';
  
-if (isset($_SESSION["username"])) {
-    if($_SESSION['uid'] === '1'){
-        $loggedin = " 
-            <div class='loggedname'>
-                <h2>Welcome <a href='/php/view_profile.php?uid=". $_SESSION['uid'] ."'>" . $_SESSION["username"] . "</a>!</h2>
-            </div>
-            <div class='login-links clearfix'>
-                <a href='/php/logout.php'><p>Logout</p></a>
-            </div" ;
-        }
-    
-    else {
-        $loggedin = " 
-            <div class='loggedname'>
-                <h2>Welcome <a href='/php/view_profile.php?uid=". $_SESSION['uid'] ."'>" . $_SESSION["username"] . "</a>!</h2>
-            </div>
-            <div class='login-links clearfix'>
-                <a href='/php/view_profile.php?uid=". $_SESSION['uid'] ."'>View Profile</a>
-                <a href='/pages/set_appointment.php'><p>Set Appointment</p></a>
-                <a href='/php/view_appointments.php'><p>My Appointments</p></a>
-                <a href='/php/logout.php'><p>Logout</p></a>
-            </div
-        </div>
-    </div>" ;
-    }
-}
-else {
-    $notloggedin = " 
-        <form class='login clearfix' id='login' action='".htmlspecialchars($_SERVER["PHP_SELF"])."' method='post' accept-charset='UTF-8'> 
-            <div class='form-group'> 
-                <input type='text' class='form-control form-control-login' placeholder='Email' name='email'> 
-            </div> 
-            <div class='form-group'> 
-                <input type='password' class='form-control form-control-login' placeholder='Password' name='password'> 
-            </div> 
-            <div class='btn-login clearfix'> 
-                <button type='submit' class='btn btn-cstm' name='login'>Login</button> 
-            </div> 
-        </form> 
-            <div class='login-links clearfix'> 
-                <a href='/pages/register.php'> 
-                    <p>Not yet registered?</p> 
-                </a> 
-                <a href='/pages/pwreset.php'> 
-                    <p>Forgot Password?</p> 
-                </a> 
-            </div> 
-        </div>
-    </div>" ;}
-
 if(isset($_POST['login'])){
     if ($_POST) {
 
@@ -133,23 +82,66 @@ if(isset($_POST['login'])){
 
 <body>
     <!-- HEADER -->
-    <div class="header">
-        <div class="content-container clearfix">
-            <div class="branding">
-                <a href="/index.php" title="Dreidents Dental Clinic">
-                    <img src="/images/logo.jpg" alt="logo">
-                </a>
-            </div>
-            <div class='login_form'>
-                <?php
+<div class="header">
+    <div class="content-container clearfix">
+        <div class="branding">
+            <a href="/index.php" title="Dreidents Dental Clinic">
+                <img src="/images/logo.jpg" alt="logo">
+            </a>
+        </div>
+        <div class='login_form'>
+        <?php
 
-                    echo $invalidErr;
-                    echo $loggedin;
-                    echo $notloggedin;
+            echo $invalidErr;
+
+            if (isset($_SESSION["username"])) {
+                if($_SESSION['uid'] === '1'){
+                    echo " 
+                        <div class='loggedname'>
+                            <h2>Welcome <a href='/pages/admin/patients.php'>" . $_SESSION["username"] . "</a>!</h2>
+                        </div>
+                        <div class='login-links clearfix'>
+                            <a href='/php/logout.php'><p>Logout</p></a>
+                        </div>" ;
+                    }
+                
+                else {
+                    echo " 
+                        <div class='loggedname'>
+                            <h2>Welcome <a href='/php/view_profile.php?uid=". $_SESSION['uid'] ."'>" . $_SESSION["username"] . "</a>!</h2>
+                        </div>
+                        <div class='login-links clearfix'>
+                            <a href='/php/view_profile.php?uid=". $_SESSION['uid'] ."'>View Profile</a>
+                            <a href='/pages/set_appointment.php'><p>Set Appointment</p></a>
+                            <a href='/php/view_appointments.php'><p>My Appointments</p></a>
+                            <a href='/php/logout.php'><p>Logout</p></a>
+                        </div>" ;
+                }
+            }
+            else {
+                echo " 
+                    <form class='login clearfix' id='login' action='".htmlspecialchars($_SERVER["PHP_SELF"])."' method='post' accept-charset='UTF-8'> 
+                        <div class='form-group'> 
+                            <input type='text' class='form-control form-control-login' placeholder='Email' name='email'> 
+                        </div> 
+                        <div class='form-group'> 
+                            <input type='password' class='form-control form-control-login' placeholder='Password' name='password'> 
+                        </div> 
+                        <div class='btn-login clearfix'> 
+                            <button type='submit' class='btn btn-cstm' name='login'>Login</button> 
+                        </div> 
+                    </form> 
+                    <div class='login-links clearfix'> 
+                        <a href='/pages/register.php'> 
+                            <p>Not yet registered?</p> 
+                        </a> 
+                        <a href='/pages/pwreset.php'> 
+                            <p>Forgot Password?</p> 
+                        </a> 
+                    </div> " ;}
 
                 ?>
-            </div>
         </div>
     </div>
-<div>
-    <!-- HEADER -->
+</div>
+<!-- HEADER -->

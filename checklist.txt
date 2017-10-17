@@ -38,16 +38,21 @@ DONE *separate require DB
 DONE *footer close links
 DONE *fix date picker design
 DONE *add form authentication
+DONE *form login validation for updates
+DONE *inspect content_container header
+DONE *user feedback box
+DONE *add cron job for expired and notif
 
 REMAINING
 
-*form login validation for updates
-*inspect content_container header
+*send email to admin if change of appt
+*add DONE button for appt
+*redirect need login
+*invalid error login
+*forgot password
 *view profile
-
 *change button for form search
 *suggest available time for selected date if not available
-*send email to admin if change of appt
 *birth day on reg 100% when on phone
 *fix design
 *fix header design
@@ -55,5 +60,5 @@ REMAINING
 *close links
 *email after reg and set appointment
 *Email a day before appointment day
-*user feedback box
+
 *Documentation

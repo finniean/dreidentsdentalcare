@@ -192,10 +192,8 @@
 		     	} 
 		    }
 		    else {
-               	echo "
-               		<div class='alert alert-danger'>
-			        	<strong>Sorry!</strong> Please login to view this page.
-			        </div>";
+		    	
+               	ob_end_flush(header('Location: /php/require_login.php'));
 		    }
 		 } 
 		 else {

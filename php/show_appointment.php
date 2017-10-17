@@ -8,6 +8,7 @@ $appt_time = $_SESSION['appt_appt_time'];
 $services = $_SESSION['appt_services'];
 $first_name = $_SESSION['appt_first_name'];
 $last_name = $_SESSION['appt_last_name'];
+$status = '';
 
 $sql="SELECT * FROM appointments
 WHERE appt_date = '$start_date' AND service = '$services'
@@ -41,8 +42,16 @@ $result=mysqli_query($link, $sql);
               <th>Last Name</th>
               <th>Email</th>
               <th>Mobile Number</th>
+              <th>Status</th>
             </tr>";
-          while($row = mysqli_fetch_assoc($result)) { echo "
+          while($row = mysqli_fetch_assoc($result)) {
+            if(empty($row["status"])){
+              $status = 'BUTTON';
+            }
+            else{
+              $status = $row["status"];
+            };
+           echo "
             <tr class='resultsrow'>
               <td>" . $row["appt_date"] . "</td>
               <td>" . $row["appt_time"] . "</td>
@@ -51,6 +60,7 @@ $result=mysqli_query($link, $sql);
               <td>" . $row["last_name"] . "</td>
               <td>" . $row["email"] . "</td>
               <td>" . $row["mobile_number"] . "</td>
+              <td>" . $status . "</td>
             </tr>"; } }
           else { echo "<div class='alert alert-danger' role='alert'><p>0 results</p></div>"; }
           ?>

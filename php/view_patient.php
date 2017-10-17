@@ -16,70 +16,68 @@
 		$emailErr = $first_nameErr = $last_nameErr = $birth_dateErr = '';
 
 		if(isset($_POST['update'])) {
-			if ($_POST) {
 
-             $valid = true;
+         $valid = true;
 
-	             if (empty($_POST["email"])) {
-	               $valid = false;
-	               $emailErr = "Email is required";
-	             } else {
-	               $email = mysqli_real_escape_string($link, $_REQUEST['email']);
-	             }
+             if (empty($_POST["email"])) {
+               $valid = false;
+               $emailErr = "Email is required";
+             } else {
+               $email = mysqli_real_escape_string($link, $_REQUEST['email']);
+             }
 
 
-	             if (empty($_POST["first_name"])) {
-	               $valid = false;
-	               $first_nameErr = "First Name is required";
-	             } else {
-	               $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
-	             }
+             if (empty($_POST["first_name"])) {
+               $valid = false;
+               $first_nameErr = "First Name is required";
+             } else {
+               $first_name = mysqli_real_escape_string($link, $_REQUEST['first_name']);
+             }
 
-	             if (empty($_POST["last_name"])) {
-	               $valid = false;
-	               $last_nameErr = "Last Name is required";
-	             } else {
-	               $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
-	             }
+             if (empty($_POST["last_name"])) {
+               $valid = false;
+               $last_nameErr = "Last Name is required";
+             } else {
+               $last_name = mysqli_real_escape_string($link, $_REQUEST['last_name']);
+             }
 
-	             if (empty($_POST["birth_date"])) {
-	               $valid = false;
-	               $birth_dateErr = "Birth Day is required";
-	             } else {
-	               $birth_date = mysqli_real_escape_string($link, $_REQUEST['birth_date']);
-	             }
-		         
-		         if ($valid){
-		         $home_address= mysqli_real_escape_string($link, $_REQUEST['home_address']);
-		         $phone_number= mysqli_real_escape_string($link, $_REQUEST['phone_number']);
-		         $mobile_number= mysqli_real_escape_string($link, $_REQUEST['mobile_number']);
-		         $occupation= mysqli_real_escape_string($link, $_REQUEST['occupation']);
-		         $business_phone= mysqli_real_escape_string($link, $_REQUEST['business_phone']);
-		         $spouse_name= mysqli_real_escape_string($link, $_REQUEST['spouse_name']);
-		         $spouse_phone= mysqli_real_escape_string($link, $_REQUEST['spouse_phone']);
-		         $medical_doctor= mysqli_real_escape_string($link, $_REQUEST['medical_doctor']);
-		         $last_visit= mysqli_real_escape_string($link, $_REQUEST['last_visit']);
-		         $dentist_visit= mysqli_real_escape_string($link, $_REQUEST['dentist_visit']);
-		         $referral= mysqli_real_escape_string($link, $_REQUEST['referral']);
+             if (empty($_POST["birth_date"])) {
+               $valid = false;
+               $birth_dateErr = "Birth Day is required";
+             } else {
+               $birth_date = mysqli_real_escape_string($link, $_REQUEST['birth_date']);
+             }
+	         
+	         if ($valid){
+	         $home_address= mysqli_real_escape_string($link, $_REQUEST['home_address']);
+	         $phone_number= mysqli_real_escape_string($link, $_REQUEST['phone_number']);
+	         $mobile_number= mysqli_real_escape_string($link, $_REQUEST['mobile_number']);
+	         $occupation= mysqli_real_escape_string($link, $_REQUEST['occupation']);
+	         $business_phone= mysqli_real_escape_string($link, $_REQUEST['business_phone']);
+	         $spouse_name= mysqli_real_escape_string($link, $_REQUEST['spouse_name']);
+	         $spouse_phone= mysqli_real_escape_string($link, $_REQUEST['spouse_phone']);
+	         $medical_doctor= mysqli_real_escape_string($link, $_REQUEST['medical_doctor']);
+	         $last_visit= mysqli_real_escape_string($link, $_REQUEST['last_visit']);
+	         $dentist_visit= mysqli_real_escape_string($link, $_REQUEST['dentist_visit']);
+	         $referral= mysqli_real_escape_string($link, $_REQUEST['referral']);
 
-		         $update = "UPDATE `patients` SET `first_name` = '$first_name' , `last_name` = '$last_name' , `email` = '$email' , `birth_date` = '$birth_date' , `home_address` = '$home_address' , `phone_number` = '$phone_number' , `mobile_number` = '$mobile_number' , `occupation` = '$occupation' , `business_phone` = '$business_phone', `spouse_name` = '$spouse_name', `medical_doctor` = '$medical_doctor', `last_visit` = '$last_visit', `dentist_visit` = '$dentist_visit', `referral` = '$referral' WHERE `patients`.`uid` = '$uid' ;";
+	         $update = "UPDATE `patients` SET `first_name` = '$first_name' , `last_name` = '$last_name' , `email` = '$email' , `birth_date` = '$birth_date' , `home_address` = '$home_address' , `phone_number` = '$phone_number' , `mobile_number` = '$mobile_number' , `occupation` = '$occupation' , `business_phone` = '$business_phone', `spouse_name` = '$spouse_name', `medical_doctor` = '$medical_doctor', `last_visit` = '$last_visit', `dentist_visit` = '$dentist_visit', `referral` = '$referral' WHERE `patients`.`uid` = '$uid' ;";
 
-			         if(mysqli_query($link, $update)){
-			            echo "<div class='alert alert-success'>
-			                 <strong>Success!</strong> You have updated the profile.
-			               </div>";
-         			} 
+		         if(mysqli_query($link, $update)){
+		            echo "<div class='alert alert-success'>
+		                 <strong>Success!</strong> You have updated the profile.
+		               </div>";
+     			} 
 
-			         else{
-			             echo "ERROR: Could not able to execute $update. " . mysqli_error($link);
-			         }
-         		}
-		         else {
-		               echo "<div class='alert alert-danger'>
-		                       <strong>Sorry!</strong> Please fill the required fields.
-		                     </div>";
+		         else{
+		             echo "ERROR: Could not able to execute $update. " . mysqli_error($link);
 		         }
-          	} 
+     		}
+	         else {
+	               echo "<div class='alert alert-danger'>
+	                       <strong>Sorry!</strong> Please fill the required fields.
+	                     </div>";
+	         }
       	}
 
          if(isset($_POST['delete'])){
@@ -92,15 +90,11 @@
                  <a href='/pages/admin/patients.php'></a>
                </div>";
 
-        } 
-
-         else{
-             echo "ERROR: Could not able to execute $delete. " . mysqli_error($link);
-         } }
+        	} 
+		}
 
 
-		$sql="SELECT * FROM patients
-		WHERE uid='$uid'";
+		$sql="SELECT * FROM patients WHERE uid='$uid'";
 
 		$result=mysqli_query($link, $sql);
 
@@ -205,9 +199,7 @@
 		               </div>
 		            </div>";
 
-		         } }
-		        else{};
-		        ?>
+		         } } ?>
 
 		       	<input type='submit' class='btn btn-cstm' id='update' value='Update' name='update'>
 				<input type='submit' class='btn btn-cstm' id='delete' value='Delete' name='delete'>

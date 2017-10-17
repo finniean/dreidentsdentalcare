@@ -125,7 +125,9 @@ nav .navbar-collapsed{
 	margin-left:50px;
 }
 /* Home */
-
+.home-carousel{
+    padding: 30px 30px 0;
+}
 
 
 /* Registration */

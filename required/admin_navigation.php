@@ -25,6 +25,9 @@
                 <li>
                     <a href='/pages/admin/register.php'>REGISTER PATIENT</a>
                 </li>
+                <li>
+                    <a href='/pages/admin/reports.php'>REPORTS</a>
+                </li>
                 </ul>
             </div>
     </nav>
@@ -46,6 +49,9 @@
                 </li>
                 <li>
                     <a href='/pages/admin/register.php'>REGISTER PATIENT</a>
+                </li>
+                <li>
+                    <a href='/pages/admin/reports.php'>REPORTS</a>
                 </li>
                 </ul>
             </div>

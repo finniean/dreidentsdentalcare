@@ -3,6 +3,9 @@
 <!-- begin page content -->
 <div class="pagebody clearfix">
     <div class="content-container">
+        <div class="pageheader">
+            <h1>Welcome!</h1>
+        </div>
         <div class="home-carousel">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
