@@ -24,8 +24,6 @@ if($_SESSION['uid'] === '1'){
         } else {
             $_SESSION['patient_last_name'] = mysqli_real_escape_string($link, $_REQUEST['last_name']);
         }
-            $_SESSION['patient_email'] = mysqli_real_escape_string($link, $_REQUEST['email']);
-            $_SESSION['patient_mobile_number'] = mysqli_real_escape_string($link, $_REQUEST['mobile_number']);
 
         if ($valid){
             ob_end_flush(header ('Location: /php/show_patients.php'));
@@ -44,14 +42,6 @@ if($_SESSION['uid'] === '1'){
                 <label>Last Name</label>
                 <span class='error'>* " . $last_nameErr . "</span>
                 <input type='text' class='form-control' name='last_name'>
-            </div>
-            <div class='form-group'>
-                <label>Email</label>
-                <input type='text' class='form-control' name='email'>
-            </div>
-            <div class='form-group'>
-                <label>Mobile Number</label>
-                <input type='text' class='form-control' name='mobile_number'>
             </div>
             <input type='submit' class='btn btn-cstm' value='Search Appointments'>
         </form>

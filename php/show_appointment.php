@@ -4,18 +4,10 @@ require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
 
 $start_date = $_SESSION['appt_start_date'];
 $end_date = $_SESSION['appt_end_date'];
-$appt_time = $_SESSION['appt_appt_time'];
-$services = $_SESSION['appt_services'];
-$first_name = $_SESSION['appt_first_name'];
-$last_name = $_SESSION['appt_last_name'];
 $status = '';
 
 $sql="SELECT * FROM appointments
-WHERE appt_date = '$start_date' AND service = '$services'
-OR '$end_date'
-OR '$services'
-AND first_name LIKE '%" .$first_name. "%'
-AND last_name LIKE '%" .$last_name. "%'
+WHERE appt_date BETWEEN '$start_date' AND '$end_date'
 ORDER BY appt_date ASC;" ;
 
 $result=mysqli_query($link, $sql);
@@ -46,7 +38,7 @@ $result=mysqli_query($link, $sql);
             </tr>";
           while($row = mysqli_fetch_assoc($result)) {
             if(empty($row["status"])){
-              $status = 'BUTTON';
+              $status = "<a href='/php/appointment_status.php?aid=". $row['aid'] ."'>View</a>";
             }
             else{
               $status = $row["status"];
@@ -61,7 +53,8 @@ $result=mysqli_query($link, $sql);
               <td>" . $row["email"] . "</td>
               <td>" . $row["mobile_number"] . "</td>
               <td>" . $status . "</td>
-            </tr>"; } }
+            </tr>"; }
+            }
           else { echo "<div class='alert alert-danger' role='alert'><p>0 results</p></div>"; }
           ?>
 

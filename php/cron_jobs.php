@@ -2,7 +2,7 @@
 
 require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
 
-$today= date('m/d/y');
+$today= date('m/d/Y');
 $update = "UPDATE appointments SET status = 'Expired' WHERE appt_date <= '$today' and status != 'Done';";
 $result=mysqli_query($link, $update);
 
@@ -22,8 +22,9 @@ if (mysqli_num_rows($result)) {
 		if($diff == '1'){
 		    $to = $row['email'];
 			$subject = 'Appointment Reminder';
-			$message = "Good Morning ". $row['first_name'] ."!\n\nWe want to remind you of your appointment tomorrow ". $row['app_time'] ." for ". $row['service'] ."";
-			mail( $to, $subject, $message );
+			$message = "We would like to remind you of your appointment tomorrow ". $row['app_time'] ." for ". $row['service'] ."";
+			$headers = "Good Morning ". $row['first_name'] ."!";
+			mail( $to, $subject, $message, $headers );
 		}
    }
 }

@@ -306,9 +306,10 @@ form {
     width: 50%;
     float: right;
 }
-header .error{
-    float: right !important;
-    padding-right: 10px !important;
+span.login_error {
+    color: red;
+    float: right;
+    padding-right: 10px;
 }
 .login .form-group {
     width: 40%;
@@ -346,8 +347,8 @@ header .error{
     float: right;
     margin-right: 15px;
 }
-.show_patients,
-.show_appt{
+.show_patients table,
+.show_appt table{
     width: 100%;
 }
 .show_patients th,

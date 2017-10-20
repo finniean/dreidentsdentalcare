@@ -4,14 +4,10 @@ require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
 
 $first_name = $_SESSION['patient_first_name'];
 $last_name = $_SESSION['patient_last_name'];
-$email = $_SESSION['patient_email'];
-$mobile_number = $_SESSION['patient_mobile_number'];
 
 $sql = "SELECT * FROM patients
 WHERE (first_name LIKE '%" .$first_name. "%'
-OR last_name LIKE '%" .$last_name. "%')
-AND (email LIKE '%" .$email. "%')
-AND (mobile_number LIKE '%" .$mobile_number. "%')
+AND last_name LIKE '%" .$last_name. "%')
 ORDER BY last_name ASC;" ;
 
 $result=mysqli_query($link, $sql);
@@ -24,7 +20,8 @@ $result=mysqli_query($link, $sql);
          <h1>Patient's Information</h1>
       </div>
       <div class="pagecontent clearfix">
-         <table class='show_patients'>
+        <div class='show_patients'>
+         <table>
 
         <?php
         if (mysqli_num_rows($result)> 0) { echo "
@@ -48,7 +45,7 @@ $result=mysqli_query($link, $sql);
 
           </table>
           <div><a href='/pages/admin/patients.php'><input type='submit' class='btn btn-cstm search_again' value='Search Again'></a></div>
-        
+        </div>
       </div>
    </div>
 </div>

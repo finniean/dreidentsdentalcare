@@ -173,10 +173,6 @@
                else {
                   ob_end_flush(header('Location: /php/require_login.php'));
                }
-            }
-            else {
-
-               ob_end_flush(header('Location: /php/require_login.php'));
             }?>
             <input type='submit' class='btn btn-cstm' value='Update' name='update'>
             <input type='submit' class='btn btn-cstm' value='Cancel' name='delete'>

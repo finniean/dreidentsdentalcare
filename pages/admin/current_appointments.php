@@ -1,17 +1,15 @@
-<?php $title='Check Appointments' ; ob_start(); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php');
+<?php $title='Check Appointments' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/admin_navigation.php');
 
 require($_SERVER[ 'DOCUMENT_ROOT']. '/php/db.php');
 
 if($_SESSION['uid'] === '1'){
 
-  $datenow = date("d/m/Y");
+  $datenow = date("m/d/Y");
   $sql="SELECT * FROM appointments
   WHERE appt_date = '$datenow'
   ORDER BY appt_time DESC;" ;
 
   $result=mysqli_query($link, $sql);
-
-  
 
 }
 
@@ -37,8 +35,16 @@ if($_SESSION['uid'] === '1'){
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Mobile Number</th>
+                <th>Status</th>
               </tr>";
-            while($row = mysqli_fetch_assoc($result)) { echo "
+            while($row = mysqli_fetch_assoc($result)) {
+              if(empty($row["status"])){
+              $status = "<a href='/php/appointment_status.php?aid=". $row['aid'] ."'>View</a>";
+              }
+              else{
+                $status = $row["status"];
+              };
+             echo "
               <tr class='resultsrow'>
                 <td>" . $row["appt_date"] . "</td>
                 <td>" . $row["appt_time"] . "</td>
@@ -47,8 +53,9 @@ if($_SESSION['uid'] === '1'){
                 <td>" . $row["last_name"] . "</td>
                 <td>" . $row["email"] . "</td>
                 <td>" . $row["mobile_number"] . "</td>
+                <td>" . $status . "</td>
               </tr>"; } }
-            else { echo "<div class='alert alert-danger' role='alert'><p>0 results</p></div>"; }
+            else { echo "<div class='alert alert-danger' role='alert'><p>No appointments today</p></div>"; }
             ?>
 
             </table>

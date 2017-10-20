@@ -45,15 +45,17 @@ DONE *add cron job for expired and notif
 
 REMAINING
 
+typical thank you registration adn appointment email
+
+*update appointment
+*fix set appointment suggesting time
+*password reset
+*user and password incorrect
 *send email to admin if change of appt
 *add DONE button for appt
 *redirect need login
 *invalid error login
 *forgot password
-*view profile
-*change button for form search
-*suggest available time for selected date if not available
-*birth day on reg 100% when on phone
 *fix design
 *fix header design
 *fix classes
