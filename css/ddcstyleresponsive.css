@@ -306,11 +306,6 @@ form {
     width: 50%;
     float: right;
 }
-span.login_error {
-    color: red;
-    float: right;
-    padding-right: 10px;
-}
 .login .form-group {
     width: 40%;
     float: left;

@@ -47,6 +47,7 @@ REMAINING
 
 typical thank you registration adn appointment email
 
+*password reset
 *update appointment
 *fix set appointment suggesting time
 *password reset

@@ -76,10 +76,6 @@ if ($_POST) {
                      <strong>Email:</strong> " .$email. "<br>
                      <strong>Mobile Number:</strong> " .$mobile_number. "
                   </div>";
-            } 
-
-            else{
-                echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
             }
          }  
       }  

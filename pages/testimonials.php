@@ -1,6 +1,6 @@
 <?php $title='Testimonials' ; include($_SERVER[ 'DOCUMENT_ROOT']. '/required/header.php'); include($_SERVER[ 'DOCUMENT_ROOT']. '/required/navigation.php'); 
 $sql = "SELECT * FROM feedback" ;
-$result=mysqli_query($link, $sql);
+$result = mysqli_query($link, $sql);
 ?>
 
 <!-- begin page content -->
@@ -22,7 +22,9 @@ $result=mysqli_query($link, $sql);
                         </div>
                     </div>";
                 } 
-            } ?>
+            }
+            mysqli_close($link);
+            ?>
         </div>
     </div>
 </div>
